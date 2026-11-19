@@ -1,0 +1,8 @@
+{
+  "dataSourceName": "X-Wing | Avionics Equipment",
+  "description": "Avionics equipment tracking by tail number. Source: Avionics Equipment Import tab from Fleet & Facilities workbook.",
+  "columns": [
+    {"name": "Aircraft", "type": "STRING"},
+    {"name": "Available Avionics", "type": "STRING"}
+  ]
+}

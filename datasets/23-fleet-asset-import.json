@@ -1,0 +1,17 @@
+{
+  "dataSourceName": "X-Wing | Fleet Asset Import",
+  "description": "Fleet asset status with out-of-service reasons, time out of service, and most due items. Source: Fleet Asset Import tab from Fleet & Facilities workbook.",
+  "columns": [
+    {"name": "Asset", "type": "STRING"},
+    {"name": "Type", "type": "STRING"},
+    {"name": "Base", "type": "STRING"},
+    {"name": "Status", "type": "STRING"},
+    {"name": "Reason", "type": "STRING"},
+    {"name": "TOS", "type": "STRING"},
+    {"name": "Est. RTS", "type": "STRING"},
+    {"name": "Make Model", "type": "STRING"},
+    {"name": "Most Due", "type": "STRING"},
+    {"name": "Remaining", "type": "DECIMAL"},
+    {"name": "Type (unit)", "type": "STRING"}
+  ]
+}

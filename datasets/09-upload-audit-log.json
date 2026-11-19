@@ -1,0 +1,16 @@
+{
+  "dataSourceName": "X-Wing | Upload Audit Log",
+  "description": "Audit trail of all file uploads with validation results, approval status, and reviewer information. Replicates the Google Sheets Upload History tracking.",
+  "columns": [
+    {"name": "upload_id", "type": "STRING"},
+    {"name": "upload_timestamp", "type": "DATETIME"},
+    {"name": "report_type", "type": "STRING"},
+    {"name": "uploaded_by", "type": "STRING"},
+    {"name": "source_filename", "type": "STRING"},
+    {"name": "validation_result", "type": "STRING"},
+    {"name": "reviewed_by", "type": "STRING"},
+    {"name": "approval_status", "type": "STRING"},
+    {"name": "row_count", "type": "LONG"},
+    {"name": "archive_reference", "type": "STRING"}
+  ]
+}

@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>X-Wing Maintenance Dashboard</title>
+    <link rel="stylesheet" href="app.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="app-header">
+        <div class="header-left">
+            <div class="app-icon">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                    <path d="M2 17l10 5 10-5M2 12l10 5 10-5"/>
+                </svg>
+            </div>
+            <div class="header-title-group">
+                <div class="app-company">FLEET MX</div>
+                <h1 class="app-title" id="viewTitle">MAINT TERMINAL</h1>
+            </div>
+        </div>
+        <div class="header-right">
+            <div style="display: flex; align-items: center; gap: 1rem;">
+                <div style="display: flex; align-items: center; gap: 0.5rem;">
+                    <label for="role-selector" style="font-size: 0.85rem; color: #94a3b8;">Role:</label>
+                    <select id="role-selector" style="padding: 0.4rem 0.8rem; border-radius: 4px; border: 1px solid #475569; background: #1e293b; color: #e2e8f0; font-size: 0.85rem;">
+                        <option value="administrator">Administrator</option>
+                        <option value="editor">Editor</option>
+                        <option value="view-only">View Only</option>
+                    </select>
+                </div>
+                <div class="snapshot-picker" id="snapshotPicker" hidden>
+                    <label for="snapshot-selector">Data date:</label>
+                    <button class="snapshot-step" id="snapshotPrev" title="Previous date" aria-label="Previous date">&#8249;</button>
+                    <select id="snapshot-selector"></select>
+                    <button class="snapshot-step" id="snapshotNext" title="Next date" aria-label="Next date">&#8250;</button>
+                </div>
+                <span class="last-updated" id="lastUpdated">Last updated: Loading...</span>
+                <button class="btn-refresh" id="btnRefresh" title="Refresh data">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M1 4v6h6M23 20v-6h-6"/>
+                        <path d="M20.49 9A9 9 0 0 0 5.64 5.64L1 10m22 4l-4.64 4.36A9 9 0 0 1 3.51 15"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="history-banner" id="historyBanner" hidden>
+        <span id="historyBannerText"></span>
+        <button id="historyBannerLatest">Back to latest</button>
+    </div>
+
+    <!-- Global Inline Message Container -->
+    <div id="global-message" style="position: fixed; top: 80px; left: 50%; transform: translateX(-50%); z-index: 10000; min-width: 300px; max-width: 600px;"></div>
+
+    <!-- Dashboard View Selector -->
+    <div class="dashboard-view-selector">
+        <div class="view-selector-label">DASHBOARD VIEW</div>
+        <div class="view-toggle-buttons">
+            <button class="view-toggle-btn" data-view="ops" id="btn-view-ops">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                    <path d="M2 17l10 5 10-5M2 12l10 5 10-5"/>
+                </svg>
+                <span>OPS</span>
+            </button>
+            <button class="view-toggle-btn active" data-view="maint" id="btn-view-maint">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+                </svg>
+                <span>MAINT</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Navigation Tabs -->
+    <!-- MAINT View Navigation -->
+    <nav class="tab-nav view-nav-maint">
+        <button class="tab-btn active" data-tab="maint-dashboard" data-view="maint">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                <path d="M2 17l10 5 10-5M2 12l10 5 10-5"/>
+            </svg>
+            <span>MAINT DASHBOARD</span>
+        </button>
+
+        <button class="tab-btn" data-tab="mx-control" data-view="maint">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="3" width="7" height="7"/>
+                <rect x="14" y="3" width="7" height="7"/>
+                <rect x="14" y="14" width="7" height="7"/>
+                <rect x="3" y="14" width="7" height="7"/>
+            </svg>
+            <span>MX CONTROL</span>
+        </button>
+
+        <button class="tab-btn tab-placeholder" data-tab="inventory" data-view="maint" title="Coming soon - Inventory reconciliation integration">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
+                <line x1="12" y1="22.08" x2="12" y2="12"/>
+            </svg>
+            <span>INVENTORY</span>
+            <span class="badge badge-pending">Pending</span>
+        </button>
+
+        <button class="tab-btn" data-tab="due-lists" data-view="maint">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="5" width="18" height="14" rx="2" ry="2"/>
+                <line x1="9" y1="2" x2="9" y2="8"/>
+                <line x1="15" y1="2" x2="15" y2="8"/>
+                <line x1="3" y1="12" x2="21" y2="12"/>
+            </svg>
+            <span>DUE LISTS</span>
+        </button>
+
+        <button class="tab-btn" data-tab="mx-forecast" data-view="maint">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M3 12h4l3 9 4-18 3 9h4"/>
+                <circle cx="12" cy="12" r="10"/>
+            </svg>
+            <span>MX FORECAST</span>
+        </button>
+
+        <button class="tab-btn" data-tab="data-sources" data-view="maint">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
+                <line x1="12" y1="22.08" x2="12" y2="12"/>
+            </svg>
+            <span>DATA SOURCES</span>
+        </button>
+    </nav>
+
+    <!-- OPS View Navigation -->
+    <nav class="tab-nav view-nav-ops" style="display: none;">
+        <button class="tab-btn" data-tab="ops-dashboard" data-view="ops">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                <path d="M2 17l10 5 10-5M2 12l10 5 10-5"/>
+            </svg>
+            <span>OPS DASHBOARD</span>
+        </button>
+
+        <button class="tab-btn" data-tab="fleet-planning" data-view="ops">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                <polyline points="9 22 9 12 15 12 15 22"/>
+            </svg>
+            <span>FLEET PLANNING</span>
+        </button>
+
+        <button class="tab-btn tab-placeholder" data-tab="capex" data-view="ops" title="Pending charter approval">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="12" y1="1" x2="12" y2="23"/>
+                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+            </svg>
+            <span>CAPEX DETAIL</span>
+            <span class="badge badge-pending">Pending</span>
+        </button>
+
+        <button class="tab-btn" data-tab="fleet-records" data-view="ops">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+            </svg>
+            <span>FLEET RECORDS</span>
+        </button>
+
+        <button class="tab-btn" data-tab="engine-stock" data-view="ops">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="3"/>
+                <path d="M12 1v6m0 6v6m5.2-15.2l-4.2 4.2m-2.8 2.8l-4.2 4.2M23 12h-6m-6 0H5m15.2 5.2l-4.2-4.2m-2.8-2.8l-4.2-4.2"/>
+            </svg>
+            <span>ENGINE STOCK</span>
+        </button>
+
+        <button class="tab-btn" data-tab="propeller-stock" data-view="ops">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+            </svg>
+            <span>PROPELLER STOCK</span>
+        </button>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main class="app-content">
+        <!-- MAINT DASHBOARD Tab -->
+        <div class="tab-content active" id="maint-dashboard">
+            <div class="content-header">
+                <h2>Maintenance Dashboard</h2>
+                <p class="subtitle">Overview of maintenance operations and fleet status</p>
+            </div>
+
+            <!-- Quick Stats -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-label">Available on route</div>
+                    <div class="stat-value status-green" id="stat-available">0</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Available - standby</div>
+                    <div class="stat-value" id="stat-standby">0</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">In work</div>
+                    <div class="stat-value status-yellow" id="stat-inwork">0</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Active route swaps</div>
+                    <div class="stat-value" id="stat-swaps">0</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Customer aircraft</div>
+                    <div class="stat-value" id="stat-customer">0</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">MEL</div>
+                    <div class="stat-value status-yellow" id="stat-mel">0</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Overdue items</div>
+                    <div class="stat-value status-red" id="stat-overdue">0</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Due ≤30 days</div>
+                    <div class="stat-value status-yellow" id="stat-due30">0</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Due 31-60 days</div>
+                    <div class="stat-value" id="stat-due3160">0</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Due 61-90 days</div>
+                    <div class="stat-value" id="stat-due6190">0</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- MX CONTROL Tab -->
+        <div class="tab-content" id="mx-control">
+            <div class="content-header">
+                <h2>Fleet Status & Due Lists</h2>
+                <p class="subtitle" id="mx-control-subtitle">Real-time maintenance control</p>
+            </div>
+
+            <!-- Fleet Status Grid -->
+            <section class="section">
+                <h3 class="section-title">Fleet Status</h3>
+                <div id="fleet-status-grid" class="fleet-grid">
+                    <!-- Will be populated by JavaScript -->
+                    <div class="loading-state">
+                        <p>Loading fleet data...</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quick Add Row -->
+            <section class="section">
+                <h3 class="section-title">Quick Add Aircraft Status</h3>
+                <p class="subtitle" style="margin-bottom: 1rem; color: #94a3b8; font-size: 0.85rem;">
+                    <strong>Note:</strong> Entries are saved to this browser session only and do not affect dashboard counts.
+                </p>
+                <div class="quick-add-form">
+                    <input type="text" id="quick-tail" placeholder="Tail Number (e.g., N1120W)" class="form-input">
+                    <select id="quick-status" class="form-select">
+                        <option value="">Select Status</option>
+                        <option value="AVAILABLE">AVAILABLE</option>
+                        <option value="STANDBY">STANDBY</option>
+                        <option value="IN WORK">IN WORK</option>
+                        <option value="MEL">MEL</option>
+                        <option value="CUSTOMER">CUSTOMER</option>
+                    </select>
+                    <input type="text" id="quick-description" placeholder="Description (optional)" class="form-input form-input-wide">
+                    <button class="btn-primary" id="btn-quick-add">Add Status</button>
+                </div>
+                <div id="quick-add-list" style="margin-top: 1.5rem;">
+                    <!-- Populated by JavaScript -->
+                </div>
+            </section>
+
+            <!-- Aircraft Status History Search -->
+            <section class="section">
+                <h3 class="section-title">Aircraft Status History (3 Years)</h3>
+                <div class="search-form">
+                    <input type="text" id="history-search" placeholder="Search by tail number or keyword (e.g., 'N1120W' or 'transponder')" class="form-input form-input-wide">
+                    <button class="btn-secondary" id="btn-history-search">Search History</button>
+                </div>
+                <div id="history-results" class="data-table-container">
+                    <!-- Results will be populated by JavaScript -->
+                </div>
+            </section>
+
+            <!-- Due Lists Section -->
+            <section class="section">
+                <h3 class="section-title">Due Lists by Tail</h3>
+                <div class="filter-controls">
+                    <select id="filter-tail" class="form-select">
+                        <option value="">All Aircraft</option>
+                        <!-- Populated by JavaScript -->
+                    </select>
+                    <select id="filter-status" class="form-select">
+                        <option value="">All Status</option>
+                        <option value="Overdue">Overdue</option>
+                        <option value="Grounded">Grounded</option>
+                        <option value="In Margin">In Margin</option>
+                        <option value="Approaching">Approaching</option>
+                        <option value="OK">OK</option>
+                    </select>
+                    <input type="text" id="filter-task" placeholder="Search task description..." class="form-input">
+                </div>
+                <div id="due-lists-table" class="data-table-container">
+                    <!-- Due lists table will be populated by JavaScript -->
+                </div>
+            </section>
+        </div>
+
+        <!-- Data Sources Tab -->
+        <div class="tab-content" id="data-sources">
+            <div class="content-header">
+                <h2>Data Sources</h2>
+                <p class="subtitle">Read-only view of loaded datasets</p>
+            </div>
+
+            <section class="section">
+                <div id="data-sources-table" class="data-table-container">
+                    <!-- Populated by JavaScript -->
+                </div>
+            </section>
+        </div>
+
+        <!-- DUE LISTS Tab -->
+        <div class="tab-content" id="due-lists">
+            <div class="content-header">
+                <h2>Due Lists</h2>
+                <p class="subtitle">Maintenance items by tail number with compliance tracking</p>
+            </div>
+
+            <section class="section">
+                <h3 class="section-title">Filter & Search</h3>
+                <div class="filter-controls">
+                    <select id="filter-tail-2" class="form-select">
+                        <option value="">All Aircraft</option>
+                    </select>
+                    <select id="filter-status-2" class="form-select">
+                        <option value="">All Status</option>
+                        <option value="Overdue">Overdue</option>
+                        <option value="Grounded">Grounded</option>
+                        <option value="In Margin">In Margin</option>
+                        <option value="Approaching">Approaching</option>
+                        <option value="OK">OK</option>
+                    </select>
+                    <input type="text" id="filter-task-2" placeholder="Search task description..." class="form-input">
+                </div>
+                <div id="due-lists-table-2" class="data-table-container">
+                    <!-- Due lists table will be populated by JavaScript -->
+                </div>
+            </section>
+        </div>
+
+        <!-- MX FORECAST Tab -->
+        <div class="tab-content" id="mx-forecast">
+            <div class="content-header">
+                <h2>Maintenance Forecast</h2>
+                <p class="subtitle">Identify maintenance clusters and optimize scheduling to prevent multiple aircraft downtime</p>
+            </div>
+
+            <section class="section">
+                <h3 class="section-title">Forecast Settings</h3>
+                <div class="forecast-settings">
+                    <div class="setting-card">
+                        <label>Forecast Horizon (Days)</label>
+                        <input type="number" id="forecast-horizon" class="form-input" value="90" min="7" max="365">
+                    </div>
+                    <div class="setting-card">
+                        <label>Cluster Window (Days)</label>
+                        <input type="number" id="cluster-threshold" class="form-input" value="14" min="1" max="30">
+                    </div>
+                    <div class="setting-card">
+                        <label>Min Aircraft in Cluster</label>
+                        <input type="number" id="min-cluster-size" class="form-input" value="2" min="2" max="10">
+                    </div>
+                    <div class="setting-card">
+                        <button onclick="runForecastAnalysis()" class="btn-primary">Run Analysis</button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                    <h3 class="section-title">Maintenance Clusters <span id="cluster-count-badge" class="badge">0</span></h3>
+                    <div style="display: flex; gap: 0.5rem;">
+                        <button class="btn-small" onclick="filterClusters('all')" id="filter-all">All</button>
+                        <button class="btn-small" onclick="filterClusters('swappable')" id="filter-swappable">Swappable</button>
+                        <button class="btn-small" onclick="filterClusters('calendar')" id="filter-calendar">Calendar</button>
+                    </div>
+                </div>
+                <div id="forecast-clusters" class="forecast-clusters">
+                    <!-- Populated by JavaScript -->
+                </div>
+            </section>
+
+            <section class="section">
+                <h3 class="section-title">Recommended Route Swaps <span id="swap-count-badge" class="badge">0</span></h3>
+                <div id="forecast-swaps" class="data-table-container">
+                    <!-- Populated by JavaScript -->
+                </div>
+            </section>
+
+            <section class="section">
+                <h3 class="section-title">Utilization Forecast Data</h3>
+                <div id="utilization-data" class="data-table-container">
+                    <!-- Populated by JavaScript -->
+                </div>
+            </section>
+        </div>
+
+        <!-- OPS DASHBOARD Tab -->
+        <div class="tab-content" id="ops-dashboard">
+            <div class="content-header">
+                <h2>Operations Dashboard</h2>
+                <p class="subtitle">Financial & operational metrics overview</p>
+            </div>
+
+            <div class="access-note">
+                <p>⚠️ <strong>Management Access Only</strong> - This view displays financial and operational data.</p>
+            </div>
+
+            <div class="info-message">
+                <h3>📊 Phase 2 - Financial Metrics</h3>
+                <p><strong>Status:</strong> Awaiting data integration from financial systems</p>
+                <p>This section will display:</p>
+                <ul>
+                    <li>Monthly revenue and charter income</li>
+                    <li>Fleet utilization rates</li>
+                    <li>Maintenance cost tracking</li>
+                    <li>Capital expenditure summaries</li>
+                </ul>
+                <p><em>Contact management for access to financial reporting systems.</em></p>
+            </div>
+        </div>
+
+        <!-- FLEET PLANNING Tab -->
+        <div class="tab-content" id="fleet-planning">
+            <div class="content-header">
+                <h2>Fleet Planning</h2>
+                <p class="subtitle">Long-term fleet utilization and expansion planning</p>
+            </div>
+
+            <div class="placeholder-content">
+                <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                    <polyline points="9 22 9 12 15 12 15 22"/>
+                </svg>
+                <h2>Fleet Planning Module</h2>
+                <p>Long-term fleet utilization forecasting and expansion planning.</p>
+                <p class="subtitle">Status: Coming in Phase 2</p>
+            </div>
+        </div>
+
+        <!-- FLEET RECORDS Tab -->
+        <div class="tab-content" id="fleet-records">
+            <div class="content-header">
+                <h2>Fleet Records</h2>
+                <p class="subtitle">Complete aircraft registry with maintenance history</p>
+            </div>
+
+            <section class="section">
+                <div id="fleet-records-grid" class="fleet-grid">
+                    <!-- Will be populated with fleet data -->
+                </div>
+            </section>
+        </div>
+
+        <!-- ENGINE STOCK Tab -->
+        <div class="tab-content" id="engine-stock">
+            <div class="content-header">
+                <h2>Engine Stock</h2>
+                <p class="subtitle">Rotable engine pool with overhaul tracking</p>
+            </div>
+
+            <div class="placeholder-content">
+                <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <circle cx="12" cy="12" r="3"/>
+                    <path d="M12 1v6m0 6v6m5.2-15.2l-4.2 4.2m-2.8 2.8l-4.2 4.2M23 12h-6m-6 0H5m15.2 5.2l-4.2-4.2m-2.8-2.8l-4.2-4.2"/>
+                </svg>
+                <h2>Engine Stock Module</h2>
+                <p>Rotable engine pool management with overhaul program tracking.</p>
+                <p class="subtitle">Status: Coming in Phase 2</p>
+            </div>
+        </div>
+
+        <!-- PROPELLER STOCK Tab -->
+        <div class="tab-content" id="propeller-stock">
+            <div class="content-header">
+                <h2>Propeller Stock</h2>
+                <p class="subtitle">Propeller inventory and overhaul tracking</p>
+            </div>
+
+            <div class="placeholder-content">
+                <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+                </svg>
+                <h2>Propeller Stock Module</h2>
+                <p>Propeller inventory management with overhaul scheduling.</p>
+                <p class="subtitle">Status: Coming in Phase 2</p>
+            </div>
+        </div>
+
+        <!-- Inventory Placeholder Tab -->
+        <div class="tab-content" id="inventory">
+            <div class="placeholder-content">
+                <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                    <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
+                    <line x1="12" y1="22.08" x2="12" y2="12"/>
+                </svg>
+                <h2>Inventory Module</h2>
+                <p>This module will integrate with inventory reconciliation.</p>
+                <p class="subtitle">Status: Planned</p>
+            </div>
+        </div>
+
+        <!-- CapEx Placeholder Tab -->
+        <div class="tab-content" id="capex">
+            <div class="placeholder-content">
+                <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <line x1="12" y1="1" x2="12" y2="23"/>
+                    <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                </svg>
+                <h2>CapEx / Financial Planning</h2>
+                <p>4-year capital expenditure planning and fiscal year re-planning.</p>
+                <p class="subtitle">Status: Planned</p>
+                <p class="access-note">⚠️ <strong>Management access only</strong> when enabled</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="app-footer">
+        <p>Flight Maintenance Tracker v1.0</p>
+        <p class="footer-note">Data source: Fleet & Facilities workbook snapshot (10/16/2026), manual extract</p>
+    </footer>
+
+    <!-- Domo.js SDK (ryuu.js) - Required for Custom Apps -->
+    <script src="https://app.unpkg.com/ryuu.js@5.1.2"></script>
+
+    <!-- Application JavaScript -->
+    <script src="app.js"></script>
+</body>
+</html>

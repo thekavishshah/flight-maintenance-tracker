@@ -1,0 +1,118 @@
+{
+  "dataSourceName": "X-Wing | Propeller Inventory",
+  "description": "Propeller inventory and status tracking",
+  "columns": [
+      {
+        "name": "propeller_id",
+        "type": "STRING"
+      },
+      {
+        "name": "propeller_serial_number",
+        "type": "STRING"
+      },
+      {
+        "name": "propeller_model",
+        "type": "STRING"
+      },
+      {
+        "name": "manufacturer",
+        "type": "STRING"
+      },
+      {
+        "name": "blade_count",
+        "type": "LONG"
+      },
+      {
+        "name": "current_status",
+        "type": "STRING"
+      },
+      {
+        "name": "location",
+        "type": "STRING"
+      },
+      {
+        "name": "assigned_tail_number",
+        "type": "STRING"
+      },
+      {
+        "name": "position",
+        "type": "STRING"
+      },
+      {
+        "name": "total_time_hours",
+        "type": "DECIMAL"
+      },
+      {
+        "name": "total_cycles",
+        "type": "LONG"
+      },
+      {
+        "name": "time_since_overhaul",
+        "type": "DECIMAL"
+      },
+      {
+        "name": "cycles_since_overhaul",
+        "type": "LONG"
+      },
+      {
+        "name": "time_remaining_to_overhaul",
+        "type": "DECIMAL"
+      },
+      {
+        "name": "cycles_remaining_to_overhaul",
+        "type": "LONG"
+      },
+      {
+        "name": "last_overhaul_date",
+        "type": "DATE"
+      },
+      {
+        "name": "next_overhaul_date",
+        "type": "DATE"
+      },
+      {
+        "name": "overhaul_vendor",
+        "type": "STRING"
+      },
+      {
+        "name": "serviceable",
+        "type": "STRING"
+      },
+      {
+        "name": "condition",
+        "type": "STRING"
+      },
+      {
+        "name": "purchase_date",
+        "type": "DATE"
+      },
+      {
+        "name": "purchase_cost",
+        "type": "DECIMAL"
+      },
+      {
+        "name": "current_value",
+        "type": "DECIMAL"
+      },
+      {
+        "name": "notes",
+        "type": "STRING"
+      },
+      {
+        "name": "created_at",
+        "type": "DATETIME"
+      },
+      {
+        "name": "created_by",
+        "type": "STRING"
+      },
+      {
+        "name": "updated_at",
+        "type": "DATETIME"
+      },
+      {
+        "name": "updated_by",
+        "type": "STRING"
+      }
+    ]
+}

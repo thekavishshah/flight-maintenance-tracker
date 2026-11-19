@@ -1,0 +1,532 @@
+{
+  "datasets": [
+    {
+      "name": "X-Wing | Fleet Master",
+      "description": "Aircraft registry with tail numbers, serial numbers, models, status, and current times. Source: Fleet Asset Report from 135 ACM.",
+      "schema": {
+        "columns": [
+          {
+            "name": "tail_number",
+            "type": "STRING"
+          },
+          {
+            "name": "serial_number",
+            "type": "STRING"
+          },
+          {
+            "name": "model",
+            "type": "STRING"
+          },
+          {
+            "name": "status",
+            "type": "STRING",
+            "description": "STANDBY, MEL, CUST, or null (available)"
+          },
+          {
+            "name": "engine_sn",
+            "type": "STRING"
+          },
+          {
+            "name": "total_time",
+            "type": "DECIMAL"
+          },
+          {
+            "name": "total_landings",
+            "type": "LONG"
+          },
+          {
+            "name": "total_cycles",
+            "type": "LONG"
+          },
+          {
+            "name": "last_updated",
+            "type": "DATETIME"
+          },
+          {
+            "name": "upload_source",
+            "type": "STRING",
+            "description": "Original filename for audit trail"
+          }
+        ]
+      }
+    },
+    {
+      "name": "X-Wing | Aircraft Times",
+      "description": "Time-series snapshots of aircraft times, cycles, and landings. Updated 2x daily. Source: Aircraft MX Times Report from 135 ACM.",
+      "schema": {
+        "columns": [
+          {
+            "name": "tail_number",
+            "type": "STRING"
+          },
+          {
+            "name": "snapshot_date",
+            "type": "DATE"
+          },
+          {
+            "name": "snapshot_time",
+            "type": "DATETIME"
+          },
+          {
+            "name": "total_time",
+            "type": "DECIMAL"
+          },
+          {
+            "name": "total_cycles",
+            "type": "LONG"
+          },
+          {
+            "name": "total_landings",
+            "type": "LONG"
+          },
+          {
+            "name": "hobbs_time",
+            "type": "DECIMAL"
+          },
+          {
+            "name": "upload_source",
+            "type": "STRING"
+          }
+        ]
+      }
+    },
+    {
+      "name": "X-Wing | Daily Routes",
+      "description": "Daily route assignments with pilot-in-command, departure/arrival airports, and scheduled times. Source: Daily Route Sheet from 135 ACM.",
+      "schema": {
+        "columns": [
+          {
+            "name": "route_id",
+            "type": "STRING"
+          },
+          {
+            "name": "flight_date",
+            "type": "DATE"
+          },
+          {
+            "name": "tail_number",
+            "type": "STRING"
+          },
+          {
+            "name": "pic_name",
+            "type": "STRING"
+          },
+          {
+            "name": "departure_airport",
+            "type": "STRING"
+          },
+          {
+            "name": "arrival_airport",
+            "type": "STRING"
+          },
+          {
+            "name": "scheduled_time",
+            "type": "STRING"
+          },
+          {
+            "name": "leg_sequence",
+            "type": "LONG"
+          },
+          {
+            "name": "upload_source",
+            "type": "STRING"
+          }
+        ]
+      }
+    },
+    {
+      "name": "X-Wing | Due Lists",
+      "description": "Maintenance due items per tail number with compliance basis, remaining life, and status. Largest dataset (~160-239 items per aircraft). Source: Aircraft Due Lists from 135 ACM.",
+      "schema": {
+        "columns": [
+          {
+            "name": "due_item_id",
+            "type": "STRING"
+          },
+          {
+            "name": "tail_number",
+            "type": "STRING"
+          },
+          {
+            "name": "task_description",
+            "type": "STRING"
+          },
+          {
+            "name": "ata_chapter",
+            "type": "STRING"
+          },
+          {
+            "name": "compliance_basis",
+            "type": "STRING",
+            "description": "Calendar, Hours, Cycles, or Landings"
+          },
+          {
+            "name": "remaining_life",
+            "type": "DECIMAL"
+          },
+          {
+            "name": "forecast_due_date",
+            "type": "DATE"
+          },
+          {
+            "name": "last_completed_date",
+            "type": "DATE"
+          },
+          {
+            "name": "part_serial",
+            "type": "STRING"
+          },
+          {
+            "name": "status",
+            "type": "STRING",
+            "description": "Overdue, Grounded, In Margin, Approaching, or OK"
+          },
+          {
+            "name": "upload_source",
+            "type": "STRING"
+          },
+          {
+            "name": "last_updated",
+            "type": "DATETIME"
+          }
+        ]
+      }
+    },
+    {
+      "name": "X-Wing | Airport Locations",
+      "description": "Airport master data with codes, names, cities, and states. Source: Airport Detailed Activity Report from 135 ACM.",
+      "schema": {
+        "columns": [
+          {
+            "name": "airport_code",
+            "type": "STRING"
+          },
+          {
+            "name": "airport_name",
+            "type": "STRING"
+          },
+          {
+            "name": "city",
+            "type": "STRING"
+          },
+          {
+            "name": "state",
+            "type": "STRING"
+          },
+          {
+            "name": "country",
+            "type": "STRING"
+          },
+          {
+            "name": "active",
+            "type": "STRING"
+          },
+          {
+            "name": "upload_source",
+            "type": "STRING"
+          },
+          {
+            "name": "last_updated",
+            "type": "DATETIME"
+          }
+        ]
+      }
+    },
+    {
+      "name": "X-Wing | Avionics Equipment",
+      "description": "Avionics equipment tracking by tail number with serial numbers and inspection dates. Source: Aircraft Avionics Equipment Tracker from 135 ACM.",
+      "schema": {
+        "columns": [
+          {
+            "name": "tail_number",
+            "type": "STRING"
+          },
+          {
+            "name": "equipment_type",
+            "type": "STRING"
+          },
+          {
+            "name": "serial_number",
+            "type": "STRING"
+          },
+          {
+            "name": "install_date",
+            "type": "DATE"
+          },
+          {
+            "name": "next_inspection_date",
+            "type": "DATE"
+          },
+          {
+            "name": "manufacturer",
+            "type": "STRING"
+          },
+          {
+            "name": "model",
+            "type": "STRING"
+          },
+          {
+            "name": "upload_source",
+            "type": "STRING"
+          },
+          {
+            "name": "last_updated",
+            "type": "DATETIME"
+          }
+        ]
+      }
+    },
+    {
+      "name": "X-Wing | Flight Data",
+      "description": "Flight history with tail numbers, dates, routes, cargo types, and fuel burn. Source: Flight Data Report from 135 ACM.",
+      "schema": {
+        "columns": [
+          {
+            "name": "flight_id",
+            "type": "STRING"
+          },
+          {
+            "name": "tail_number",
+            "type": "STRING"
+          },
+          {
+            "name": "flight_date",
+            "type": "DATE"
+          },
+          {
+            "name": "departure_airport",
+            "type": "STRING"
+          },
+          {
+            "name": "arrival_airport",
+            "type": "STRING"
+          },
+          {
+            "name": "cargo_type",
+            "type": "STRING"
+          },
+          {
+            "name": "flight_time",
+            "type": "DECIMAL"
+          },
+          {
+            "name": "fuel_burn",
+            "type": "DECIMAL"
+          },
+          {
+            "name": "upload_source",
+            "type": "STRING"
+          },
+          {
+            "name": "last_updated",
+            "type": "DATETIME"
+          }
+        ]
+      }
+    },
+    {
+      "name": "X-Wing | Aircraft Status History",
+      "description": "Historical log of aircraft status changes for the 3-year searchable history feature. Tracks when aircraft entered STANDBY, MEL, or other status codes.",
+      "schema": {
+        "columns": [
+          {
+            "name": "history_id",
+            "type": "STRING"
+          },
+          {
+            "name": "tail_number",
+            "type": "STRING"
+          },
+          {
+            "name": "status_date",
+            "type": "DATE"
+          },
+          {
+            "name": "status",
+            "type": "STRING"
+          },
+          {
+            "name": "discrepancy_description",
+            "type": "STRING"
+          },
+          {
+            "name": "entered_by",
+            "type": "STRING"
+          },
+          {
+            "name": "resolution_date",
+            "type": "DATE"
+          },
+          {
+            "name": "resolution_notes",
+            "type": "STRING"
+          },
+          {
+            "name": "created_at",
+            "type": "DATETIME"
+          }
+        ]
+      }
+    },
+    {
+      "name": "X-Wing | Upload Audit Log",
+      "description": "Audit trail of all file uploads with validation results, approval status, and reviewer information. Replicates the Google Sheets Upload History tracking.",
+      "schema": {
+        "columns": [
+          {
+            "name": "upload_id",
+            "type": "STRING"
+          },
+          {
+            "name": "upload_timestamp",
+            "type": "DATETIME"
+          },
+          {
+            "name": "report_type",
+            "type": "STRING"
+          },
+          {
+            "name": "uploaded_by",
+            "type": "STRING"
+          },
+          {
+            "name": "source_filename",
+            "type": "STRING"
+          },
+          {
+            "name": "validation_result",
+            "type": "STRING"
+          },
+          {
+            "name": "reviewed_by",
+            "type": "STRING"
+          },
+          {
+            "name": "approval_status",
+            "type": "STRING",
+            "description": "Pending Review, Imported, Rejected, or Superseded"
+          },
+          {
+            "name": "row_count",
+            "type": "LONG"
+          },
+          {
+            "name": "archive_reference",
+            "type": "STRING"
+          }
+        ]
+      }
+    },
+    {
+      "name": "X-Wing | Work Orders",
+      "description": "Maintenance work orders tracking all maintenance tasks performed on aircraft. Includes both manually created and auto-populated work orders from due items. Supports approval workflow and status tracking.",
+      "schema": {
+        "columns": [
+          {
+            "name": "work_order_id",
+            "type": "STRING"
+          },
+          {
+            "name": "work_order_number",
+            "type": "STRING",
+            "description": "Human-readable work order number (e.g., WO-2024-001)"
+          },
+          {
+            "name": "tail_number",
+            "type": "STRING"
+          },
+          {
+            "name": "title",
+            "type": "STRING"
+          },
+          {
+            "name": "description",
+            "type": "STRING"
+          },
+          {
+            "name": "status",
+            "type": "STRING",
+            "description": "Open, In Progress, Completed, Cancelled"
+          },
+          {
+            "name": "priority",
+            "type": "STRING",
+            "description": "Low, Medium, High, Critical"
+          },
+          {
+            "name": "assigned_to",
+            "type": "STRING"
+          },
+          {
+            "name": "created_date",
+            "type": "DATETIME"
+          },
+          {
+            "name": "created_by",
+            "type": "STRING"
+          },
+          {
+            "name": "due_date",
+            "type": "DATE"
+          },
+          {
+            "name": "started_date",
+            "type": "DATETIME"
+          },
+          {
+            "name": "completed_date",
+            "type": "DATETIME"
+          },
+          {
+            "name": "labor_hours",
+            "type": "DECIMAL"
+          },
+          {
+            "name": "parts_used",
+            "type": "STRING",
+            "description": "JSON array of parts used in this work order"
+          },
+          {
+            "name": "notes",
+            "type": "STRING"
+          },
+          {
+            "name": "source",
+            "type": "STRING",
+            "description": "Manual or Auto-populated"
+          },
+          {
+            "name": "source_due_item_id",
+            "type": "STRING",
+            "description": "Reference to due item if auto-populated"
+          },
+          {
+            "name": "approval_status",
+            "type": "STRING",
+            "description": "Pending, Approved, Rejected"
+          },
+          {
+            "name": "approved_by",
+            "type": "STRING"
+          },
+          {
+            "name": "approval_date",
+            "type": "DATETIME"
+          },
+          {
+            "name": "ata_chapter",
+            "type": "STRING"
+          },
+          {
+            "name": "discrepancy_type",
+            "type": "STRING"
+          },
+          {
+            "name": "last_updated",
+            "type": "DATETIME"
+          }
+        ]
+      }
+    }
+  ]
+}

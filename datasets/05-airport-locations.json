@@ -1,0 +1,7 @@
+{
+  "dataSourceName": "X-Wing | Airport Locations",
+  "description": "Airport master data with location codes. Source: Airport Location Import tab from Fleet & Facilities workbook.",
+  "columns": [
+    {"name": "Location", "type": "STRING"}
+  ]
+}

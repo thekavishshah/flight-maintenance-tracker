@@ -1,0 +1,16 @@
+{
+  "dataSourceName": "X-Wing | Fleet Master",
+  "description": "Aircraft registry from Master Fleet tab. Contains aircraft details, home base, fleet status, current location, and management notes.",
+  "columns": [
+    {"name": "Aircraft", "type": "STRING"},
+    {"name": "Home Base", "type": "STRING"},
+    {"name": "Fleet Status", "type": "STRING"},
+    {"name": "Current Location", "type": "STRING"},
+    {"name": "Est. RTS", "type": "STRING"},
+    {"name": "Current Work Scope", "type": "STRING"},
+    {"name": "Management Notes", "type": "STRING"},
+    {"name": "Selectable Aircraft", "type": "STRING"},
+    {"name": "Aircraft Serial Number", "type": "STRING"},
+    {"name": "Year of Manufacture", "type": "STRING"}
+  ]
+}

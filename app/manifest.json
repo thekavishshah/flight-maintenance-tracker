@@ -1,0 +1,1516 @@
+{
+  "author": "",
+  "datasetsMapping": [
+    {
+      "alias": "fleet_master",
+      "dataSetId": "1c2201fb-0202-4925-acae-abca7466f4dd",
+      "fields": [
+        {
+          "alias": "Aircraft",
+          "columnName": "Aircraft"
+        },
+        {
+          "alias": "Home_Base",
+          "columnName": "Home Base"
+        },
+        {
+          "alias": "Fleet_Status",
+          "columnName": "Fleet Status"
+        },
+        {
+          "alias": "Current_Location",
+          "columnName": "Current Location"
+        },
+        {
+          "alias": "Est._RTS",
+          "columnName": "Est. RTS"
+        },
+        {
+          "alias": "Current_Work_Scope",
+          "columnName": "Current Work Scope"
+        },
+        {
+          "alias": "Management_Notes",
+          "columnName": "Management Notes"
+        },
+        {
+          "alias": "Selectable_Aircraft",
+          "columnName": "Selectable Aircraft"
+        },
+        {
+          "alias": "Aircraft_Serial_Number",
+          "columnName": "Aircraft Serial Number"
+        },
+        {
+          "alias": "Year_of_Manufacture",
+          "columnName": "Year of Manufacture"
+        }
+      ]
+    },
+    {
+      "alias": "aircraft_times",
+      "dataSetId": "8fad7ef4-5f34-402f-b86b-1b0d62df4976",
+      "fields": [
+        {
+          "alias": "REPORT_DATE",
+          "columnName": "REPORT DATE"
+        },
+        {
+          "alias": "AIRCRAFT",
+          "columnName": "AIRCRAFT"
+        },
+        {
+          "alias": "MODEL",
+          "columnName": "MODEL"
+        },
+        {
+          "alias": "HOBBS",
+          "columnName": "HOBBS"
+        },
+        {
+          "alias": "AFTT",
+          "columnName": "AFTT"
+        },
+        {
+          "alias": "LANDINGS",
+          "columnName": "LANDINGS"
+        },
+        {
+          "alias": "START_CYCLES",
+          "columnName": "START CYCLES"
+        },
+        {
+          "alias": "ENGINE_TIME",
+          "columnName": "ENGINE TIME"
+        },
+        {
+          "alias": "PROPELLER_TIME",
+          "columnName": "PROPELLER TIME"
+        },
+        {
+          "alias": "SOURCE_FILE",
+          "columnName": "SOURCE FILE"
+        }
+      ]
+    },
+    {
+      "alias": "daily_routes",
+      "dataSetId": "f25dba97-871f-49d7-a400-2e3d5aebf455",
+      "fields": [
+        {
+          "alias": "ROUTE_DATE",
+          "columnName": "ROUTE DATE"
+        },
+        {
+          "alias": "START_TIME",
+          "columnName": "START TIME"
+        },
+        {
+          "alias": "AIRCRAFT",
+          "columnName": "AIRCRAFT"
+        },
+        {
+          "alias": "OPERATION_NUMBER",
+          "columnName": "OPERATION NUMBER"
+        },
+        {
+          "alias": "CREATED_BY",
+          "columnName": "CREATED BY"
+        },
+        {
+          "alias": "REQUESTING_AGENCY",
+          "columnName": "REQUESTING AGENCY"
+        },
+        {
+          "alias": "REQUESTOR_NAME",
+          "columnName": "REQUESTOR NAME"
+        },
+        {
+          "alias": "FLIGHT_TYPE",
+          "columnName": "FLIGHT TYPE"
+        },
+        {
+          "alias": "DEPARTURE",
+          "columnName": "DEPARTURE"
+        },
+        {
+          "alias": "DESTINATION",
+          "columnName": "DESTINATION"
+        },
+        {
+          "alias": "FLIGHT_NOTES",
+          "columnName": "FLIGHT NOTES"
+        },
+        {
+          "alias": "PIC",
+          "columnName": "PIC"
+        },
+        {
+          "alias": "SIC",
+          "columnName": "SIC"
+        }
+      ]
+    },
+    {
+      "alias": "due_lists",
+      "dataSetId": "d3d9e224-95c9-441d-892a-5c536fcd9b99",
+      "fields": [
+        {
+          "alias": "Aircraft",
+          "columnName": "Aircraft"
+        },
+        {
+          "alias": "Task___Inspection",
+          "columnName": "Task / Inspection"
+        },
+        {
+          "alias": "ATA",
+          "columnName": "ATA"
+        },
+        {
+          "alias": "Forecast_Due",
+          "columnName": "Forecast Due"
+        },
+        {
+          "alias": "Remaining",
+          "columnName": "Remaining"
+        },
+        {
+          "alias": "Interval_Type",
+          "columnName": "Interval Type"
+        },
+        {
+          "alias": "Due_At",
+          "columnName": "Due At"
+        },
+        {
+          "alias": "Last_Completed",
+          "columnName": "Last Completed"
+        },
+        {
+          "alias": "Notes",
+          "columnName": "Notes"
+        },
+        {
+          "alias": "Part___Serial",
+          "columnName": "Part / Serial"
+        },
+        {
+          "alias": "Projected_Days",
+          "columnName": "Projected Days"
+        },
+        {
+          "alias": "Basis",
+          "columnName": "Basis"
+        }
+      ]
+    },
+    {
+      "alias": "airport_locations",
+      "dataSetId": "d6115040-3383-47dc-b592-cc0db27a8aad",
+      "fields": [
+        {
+          "alias": "Location",
+          "columnName": "Location"
+        }
+      ]
+    },
+    {
+      "alias": "avionics_equipment",
+      "dataSetId": "62aca46c-642f-4779-9f22-7da34b5454d9",
+      "fields": [
+        {
+          "alias": "Aircraft",
+          "columnName": "Aircraft"
+        },
+        {
+          "alias": "Available_Avionics",
+          "columnName": "Available Avionics"
+        }
+      ]
+    },
+    {
+      "alias": "flight_data",
+      "dataSetId": "7b8e4bc4-96ae-4a08-9dbb-4c3521deaff7",
+      "fields": [
+        {
+          "alias": "Date",
+          "columnName": "Date"
+        },
+        {
+          "alias": "Aircraft",
+          "columnName": "Aircraft"
+        },
+        {
+          "alias": "Route",
+          "columnName": "Route"
+        },
+        {
+          "alias": "Routing",
+          "columnName": "Routing"
+        },
+        {
+          "alias": "Op_#",
+          "columnName": "Op #"
+        },
+        {
+          "alias": "Flt_Type",
+          "columnName": "Flt Type"
+        }
+      ]
+    },
+    {
+      "alias": "aircraft_status_history",
+      "dataSetId": "22765f8e-bfa9-48d5-a6bd-7e5c109d3b6c",
+      "fields": [
+        {
+          "alias": "Asset",
+          "columnName": "Asset"
+        },
+        {
+          "alias": "Est._RTS",
+          "columnName": "Est. RTS"
+        },
+        {
+          "alias": "Location",
+          "columnName": "Location"
+        },
+        {
+          "alias": "ISSUE",
+          "columnName": "ISSUE"
+        },
+        {
+          "alias": "NOTES",
+          "columnName": "NOTES"
+        },
+        {
+          "alias": "WORK_STAGE",
+          "columnName": "WORK STAGE"
+        },
+        {
+          "alias": "Record_Date",
+          "columnName": "Record Date"
+        }
+      ]
+    },
+    {
+      "alias": "upload_audit_log",
+      "dataSetId": "09fa0583-8a29-4b67-b4e6-cef7901041e2",
+      "fields": [
+        {
+          "alias": "upload_id",
+          "columnName": "upload_id"
+        },
+        {
+          "alias": "upload_timestamp",
+          "columnName": "upload_timestamp"
+        },
+        {
+          "alias": "report_type",
+          "columnName": "report_type"
+        },
+        {
+          "alias": "uploaded_by",
+          "columnName": "uploaded_by"
+        },
+        {
+          "alias": "source_filename",
+          "columnName": "source_filename"
+        },
+        {
+          "alias": "validation_result",
+          "columnName": "validation_result"
+        },
+        {
+          "alias": "reviewed_by",
+          "columnName": "reviewed_by"
+        },
+        {
+          "alias": "approval_status",
+          "columnName": "approval_status"
+        },
+        {
+          "alias": "row_count",
+          "columnName": "row_count"
+        },
+        {
+          "alias": "archive_reference",
+          "columnName": "archive_reference"
+        }
+      ]
+    },
+    {
+      "alias": "work_orders",
+      "dataSetId": "771a684b-f6c1-4e5d-9c0c-bdeb50dec139",
+      "fields": [
+        {
+          "alias": "work_order_id",
+          "columnName": "work_order_id"
+        },
+        {
+          "alias": "work_order_number",
+          "columnName": "work_order_number"
+        },
+        {
+          "alias": "tail_number",
+          "columnName": "tail_number"
+        },
+        {
+          "alias": "title",
+          "columnName": "title"
+        },
+        {
+          "alias": "description",
+          "columnName": "description"
+        },
+        {
+          "alias": "status",
+          "columnName": "status"
+        },
+        {
+          "alias": "priority",
+          "columnName": "priority"
+        },
+        {
+          "alias": "assigned_to",
+          "columnName": "assigned_to"
+        },
+        {
+          "alias": "created_date",
+          "columnName": "created_date"
+        },
+        {
+          "alias": "created_by",
+          "columnName": "created_by"
+        },
+        {
+          "alias": "due_date",
+          "columnName": "due_date"
+        },
+        {
+          "alias": "started_date",
+          "columnName": "started_date"
+        },
+        {
+          "alias": "completed_date",
+          "columnName": "completed_date"
+        },
+        {
+          "alias": "labor_hours",
+          "columnName": "labor_hours"
+        },
+        {
+          "alias": "parts_used",
+          "columnName": "parts_used"
+        },
+        {
+          "alias": "notes",
+          "columnName": "notes"
+        },
+        {
+          "alias": "source",
+          "columnName": "source"
+        },
+        {
+          "alias": "source_due_item_id",
+          "columnName": "source_due_item_id"
+        },
+        {
+          "alias": "approval_status",
+          "columnName": "approval_status"
+        },
+        {
+          "alias": "approved_by",
+          "columnName": "approved_by"
+        },
+        {
+          "alias": "approval_date",
+          "columnName": "approval_date"
+        },
+        {
+          "alias": "ata_chapter",
+          "columnName": "ata_chapter"
+        },
+        {
+          "alias": "discrepancy_type",
+          "columnName": "discrepancy_type"
+        },
+        {
+          "alias": "last_updated",
+          "columnName": "last_updated"
+        }
+      ]
+    },
+    {
+      "alias": "capex_transactions",
+      "dataSetId": "38f8b2a0-c4f2-4ad9-8bf6-74dc591632e1",
+      "fields": [
+        {
+          "alias": "transaction_id",
+          "columnName": "transaction_id"
+        },
+        {
+          "alias": "transaction_date",
+          "columnName": "transaction_date"
+        },
+        {
+          "alias": "fiscal_year",
+          "columnName": "fiscal_year"
+        },
+        {
+          "alias": "fiscal_quarter",
+          "columnName": "fiscal_quarter"
+        },
+        {
+          "alias": "category",
+          "columnName": "category"
+        },
+        {
+          "alias": "subcategory",
+          "columnName": "subcategory"
+        },
+        {
+          "alias": "tail_number",
+          "columnName": "tail_number"
+        },
+        {
+          "alias": "description",
+          "columnName": "description"
+        },
+        {
+          "alias": "vendor",
+          "columnName": "vendor"
+        },
+        {
+          "alias": "amount",
+          "columnName": "amount"
+        },
+        {
+          "alias": "currency",
+          "columnName": "currency"
+        },
+        {
+          "alias": "budget_category",
+          "columnName": "budget_category"
+        },
+        {
+          "alias": "approved_by",
+          "columnName": "approved_by"
+        },
+        {
+          "alias": "approval_date",
+          "columnName": "approval_date"
+        },
+        {
+          "alias": "invoice_number",
+          "columnName": "invoice_number"
+        },
+        {
+          "alias": "po_number",
+          "columnName": "po_number"
+        },
+        {
+          "alias": "payment_status",
+          "columnName": "payment_status"
+        },
+        {
+          "alias": "payment_date",
+          "columnName": "payment_date"
+        },
+        {
+          "alias": "notes",
+          "columnName": "notes"
+        },
+        {
+          "alias": "created_at",
+          "columnName": "created_at"
+        },
+        {
+          "alias": "created_by",
+          "columnName": "created_by"
+        },
+        {
+          "alias": "updated_at",
+          "columnName": "updated_at"
+        },
+        {
+          "alias": "updated_by",
+          "columnName": "updated_by"
+        }
+      ]
+    },
+    {
+      "alias": "budget_allocations",
+      "dataSetId": "34d6df9f-599d-4bfd-8119-b64aeda78ce7",
+      "fields": [
+        {
+          "alias": "allocation_id",
+          "columnName": "allocation_id"
+        },
+        {
+          "alias": "fiscal_year",
+          "columnName": "fiscal_year"
+        },
+        {
+          "alias": "fiscal_quarter",
+          "columnName": "fiscal_quarter"
+        },
+        {
+          "alias": "budget_category",
+          "columnName": "budget_category"
+        },
+        {
+          "alias": "subcategory",
+          "columnName": "subcategory"
+        },
+        {
+          "alias": "allocated_amount",
+          "columnName": "allocated_amount"
+        },
+        {
+          "alias": "spent_amount",
+          "columnName": "spent_amount"
+        },
+        {
+          "alias": "remaining_amount",
+          "columnName": "remaining_amount"
+        },
+        {
+          "alias": "percent_used",
+          "columnName": "percent_used"
+        },
+        {
+          "alias": "department",
+          "columnName": "department"
+        },
+        {
+          "alias": "cost_center",
+          "columnName": "cost_center"
+        },
+        {
+          "alias": "approved_by",
+          "columnName": "approved_by"
+        },
+        {
+          "alias": "approval_date",
+          "columnName": "approval_date"
+        },
+        {
+          "alias": "status",
+          "columnName": "status"
+        },
+        {
+          "alias": "notes",
+          "columnName": "notes"
+        },
+        {
+          "alias": "created_at",
+          "columnName": "created_at"
+        },
+        {
+          "alias": "created_by",
+          "columnName": "created_by"
+        },
+        {
+          "alias": "updated_at",
+          "columnName": "updated_at"
+        },
+        {
+          "alias": "updated_by",
+          "columnName": "updated_by"
+        }
+      ]
+    },
+    {
+      "alias": "financial_metrics",
+      "dataSetId": "8a57a7d6-1cb8-4173-964b-b99def854167",
+      "fields": [
+        {
+          "alias": "metric_id",
+          "columnName": "metric_id"
+        },
+        {
+          "alias": "metric_date",
+          "columnName": "metric_date"
+        },
+        {
+          "alias": "fiscal_year",
+          "columnName": "fiscal_year"
+        },
+        {
+          "alias": "fiscal_quarter",
+          "columnName": "fiscal_quarter"
+        },
+        {
+          "alias": "fiscal_month",
+          "columnName": "fiscal_month"
+        },
+        {
+          "alias": "total_revenue",
+          "columnName": "total_revenue"
+        },
+        {
+          "alias": "operating_costs",
+          "columnName": "operating_costs"
+        },
+        {
+          "alias": "maintenance_costs",
+          "columnName": "maintenance_costs"
+        },
+        {
+          "alias": "fuel_costs",
+          "columnName": "fuel_costs"
+        },
+        {
+          "alias": "labor_costs",
+          "columnName": "labor_costs"
+        },
+        {
+          "alias": "capex_spending",
+          "columnName": "capex_spending"
+        },
+        {
+          "alias": "net_profit",
+          "columnName": "net_profit"
+        },
+        {
+          "alias": "profit_margin",
+          "columnName": "profit_margin"
+        },
+        {
+          "alias": "fleet_utilization_percent",
+          "columnName": "fleet_utilization_percent"
+        },
+        {
+          "alias": "revenue_per_flight_hour",
+          "columnName": "revenue_per_flight_hour"
+        },
+        {
+          "alias": "cost_per_flight_hour",
+          "columnName": "cost_per_flight_hour"
+        },
+        {
+          "alias": "total_flight_hours",
+          "columnName": "total_flight_hours"
+        },
+        {
+          "alias": "total_cycles",
+          "columnName": "total_cycles"
+        },
+        {
+          "alias": "aircraft_available",
+          "columnName": "aircraft_available"
+        },
+        {
+          "alias": "aircraft_in_maintenance",
+          "columnName": "aircraft_in_maintenance"
+        },
+        {
+          "alias": "notes",
+          "columnName": "notes"
+        },
+        {
+          "alias": "created_at",
+          "columnName": "created_at"
+        },
+        {
+          "alias": "created_by",
+          "columnName": "created_by"
+        }
+      ]
+    },
+    {
+      "alias": "fleet_projections",
+      "dataSetId": "540537b3-ac1c-4be9-a52c-6adcbb20142b",
+      "fields": [
+        {
+          "alias": "projection_id",
+          "columnName": "projection_id"
+        },
+        {
+          "alias": "projection_date",
+          "columnName": "projection_date"
+        },
+        {
+          "alias": "projection_year",
+          "columnName": "projection_year"
+        },
+        {
+          "alias": "projection_quarter",
+          "columnName": "projection_quarter"
+        },
+        {
+          "alias": "tail_number",
+          "columnName": "tail_number"
+        },
+        {
+          "alias": "aircraft_model",
+          "columnName": "aircraft_model"
+        },
+        {
+          "alias": "current_status",
+          "columnName": "current_status"
+        },
+        {
+          "alias": "planned_action",
+          "columnName": "planned_action"
+        },
+        {
+          "alias": "action_date",
+          "columnName": "action_date"
+        },
+        {
+          "alias": "estimated_cost",
+          "columnName": "estimated_cost"
+        },
+        {
+          "alias": "projected_hours_remaining",
+          "columnName": "projected_hours_remaining"
+        },
+        {
+          "alias": "projected_cycles_remaining",
+          "columnName": "projected_cycles_remaining"
+        },
+        {
+          "alias": "retirement_date",
+          "columnName": "retirement_date"
+        },
+        {
+          "alias": "replacement_plan",
+          "columnName": "replacement_plan"
+        },
+        {
+          "alias": "utilization_forecast",
+          "columnName": "utilization_forecast"
+        },
+        {
+          "alias": "revenue_forecast",
+          "columnName": "revenue_forecast"
+        },
+        {
+          "alias": "notes",
+          "columnName": "notes"
+        },
+        {
+          "alias": "approved_by",
+          "columnName": "approved_by"
+        },
+        {
+          "alias": "approval_status",
+          "columnName": "approval_status"
+        },
+        {
+          "alias": "created_at",
+          "columnName": "created_at"
+        },
+        {
+          "alias": "created_by",
+          "columnName": "created_by"
+        },
+        {
+          "alias": "updated_at",
+          "columnName": "updated_at"
+        },
+        {
+          "alias": "updated_by",
+          "columnName": "updated_by"
+        }
+      ]
+    },
+    {
+      "alias": "route_performance",
+      "dataSetId": "059baef9-bb31-4514-b988-b34ece4a7e2d",
+      "fields": [
+        {
+          "alias": "route_id",
+          "columnName": "route_id"
+        },
+        {
+          "alias": "route_name",
+          "columnName": "route_name"
+        },
+        {
+          "alias": "origin_airport",
+          "columnName": "origin_airport"
+        },
+        {
+          "alias": "destination_airport",
+          "columnName": "destination_airport"
+        },
+        {
+          "alias": "analysis_period",
+          "columnName": "analysis_period"
+        },
+        {
+          "alias": "fiscal_year",
+          "columnName": "fiscal_year"
+        },
+        {
+          "alias": "fiscal_quarter",
+          "columnName": "fiscal_quarter"
+        },
+        {
+          "alias": "total_flights",
+          "columnName": "total_flights"
+        },
+        {
+          "alias": "total_hours",
+          "columnName": "total_hours"
+        },
+        {
+          "alias": "avg_load_factor",
+          "columnName": "avg_load_factor"
+        },
+        {
+          "alias": "total_revenue",
+          "columnName": "total_revenue"
+        },
+        {
+          "alias": "total_costs",
+          "columnName": "total_costs"
+        },
+        {
+          "alias": "profit_margin",
+          "columnName": "profit_margin"
+        },
+        {
+          "alias": "revenue_per_flight",
+          "columnName": "revenue_per_flight"
+        },
+        {
+          "alias": "cost_per_flight",
+          "columnName": "cost_per_flight"
+        },
+        {
+          "alias": "avg_flight_time_hours",
+          "columnName": "avg_flight_time_hours"
+        },
+        {
+          "alias": "on_time_percentage",
+          "columnName": "on_time_percentage"
+        },
+        {
+          "alias": "utilization_rate",
+          "columnName": "utilization_rate"
+        },
+        {
+          "alias": "demand_forecast",
+          "columnName": "demand_forecast"
+        },
+        {
+          "alias": "notes",
+          "columnName": "notes"
+        },
+        {
+          "alias": "created_at",
+          "columnName": "created_at"
+        },
+        {
+          "alias": "created_by",
+          "columnName": "created_by"
+        }
+      ]
+    },
+    {
+      "alias": "engine_inventory",
+      "dataSetId": "ccff8d91-9f18-4f85-ac5a-c5f2f6bf26d2",
+      "fields": [
+        {
+          "alias": "engine_id",
+          "columnName": "engine_id"
+        },
+        {
+          "alias": "engine_serial_number",
+          "columnName": "engine_serial_number"
+        },
+        {
+          "alias": "engine_model",
+          "columnName": "engine_model"
+        },
+        {
+          "alias": "manufacturer",
+          "columnName": "manufacturer"
+        },
+        {
+          "alias": "current_status",
+          "columnName": "current_status"
+        },
+        {
+          "alias": "location",
+          "columnName": "location"
+        },
+        {
+          "alias": "assigned_tail_number",
+          "columnName": "assigned_tail_number"
+        },
+        {
+          "alias": "position",
+          "columnName": "position"
+        },
+        {
+          "alias": "total_time_hours",
+          "columnName": "total_time_hours"
+        },
+        {
+          "alias": "total_cycles",
+          "columnName": "total_cycles"
+        },
+        {
+          "alias": "time_since_overhaul",
+          "columnName": "time_since_overhaul"
+        },
+        {
+          "alias": "cycles_since_overhaul",
+          "columnName": "cycles_since_overhaul"
+        },
+        {
+          "alias": "time_remaining_to_overhaul",
+          "columnName": "time_remaining_to_overhaul"
+        },
+        {
+          "alias": "cycles_remaining_to_overhaul",
+          "columnName": "cycles_remaining_to_overhaul"
+        },
+        {
+          "alias": "last_overhaul_date",
+          "columnName": "last_overhaul_date"
+        },
+        {
+          "alias": "next_overhaul_date",
+          "columnName": "next_overhaul_date"
+        },
+        {
+          "alias": "overhaul_vendor",
+          "columnName": "overhaul_vendor"
+        },
+        {
+          "alias": "serviceable",
+          "columnName": "serviceable"
+        },
+        {
+          "alias": "condition",
+          "columnName": "condition"
+        },
+        {
+          "alias": "purchase_date",
+          "columnName": "purchase_date"
+        },
+        {
+          "alias": "purchase_cost",
+          "columnName": "purchase_cost"
+        },
+        {
+          "alias": "current_value",
+          "columnName": "current_value"
+        },
+        {
+          "alias": "notes",
+          "columnName": "notes"
+        },
+        {
+          "alias": "created_at",
+          "columnName": "created_at"
+        },
+        {
+          "alias": "created_by",
+          "columnName": "created_by"
+        },
+        {
+          "alias": "updated_at",
+          "columnName": "updated_at"
+        },
+        {
+          "alias": "updated_by",
+          "columnName": "updated_by"
+        }
+      ]
+    },
+    {
+      "alias": "engine_history",
+      "dataSetId": "ad22930c-53aa-468f-a308-066c895c7b00",
+      "fields": [
+        {
+          "alias": "history_id",
+          "columnName": "history_id"
+        },
+        {
+          "alias": "engine_serial_number",
+          "columnName": "engine_serial_number"
+        },
+        {
+          "alias": "event_date",
+          "columnName": "event_date"
+        },
+        {
+          "alias": "event_type",
+          "columnName": "event_type"
+        },
+        {
+          "alias": "tail_number",
+          "columnName": "tail_number"
+        },
+        {
+          "alias": "position",
+          "columnName": "position"
+        },
+        {
+          "alias": "removal_reason",
+          "columnName": "removal_reason"
+        },
+        {
+          "alias": "hours_at_event",
+          "columnName": "hours_at_event"
+        },
+        {
+          "alias": "cycles_at_event",
+          "columnName": "cycles_at_event"
+        },
+        {
+          "alias": "vendor",
+          "columnName": "vendor"
+        },
+        {
+          "alias": "work_order_number",
+          "columnName": "work_order_number"
+        },
+        {
+          "alias": "cost",
+          "columnName": "cost"
+        },
+        {
+          "alias": "downtime_days",
+          "columnName": "downtime_days"
+        },
+        {
+          "alias": "findings",
+          "columnName": "findings"
+        },
+        {
+          "alias": "actions_taken",
+          "columnName": "actions_taken"
+        },
+        {
+          "alias": "notes",
+          "columnName": "notes"
+        },
+        {
+          "alias": "technician",
+          "columnName": "technician"
+        },
+        {
+          "alias": "created_at",
+          "columnName": "created_at"
+        },
+        {
+          "alias": "created_by",
+          "columnName": "created_by"
+        }
+      ]
+    },
+    {
+      "alias": "propeller_inventory",
+      "dataSetId": "d6a4c4ad-539f-47a5-ab6a-3013300fc441",
+      "fields": [
+        {
+          "alias": "propeller_id",
+          "columnName": "propeller_id"
+        },
+        {
+          "alias": "propeller_serial_number",
+          "columnName": "propeller_serial_number"
+        },
+        {
+          "alias": "propeller_model",
+          "columnName": "propeller_model"
+        },
+        {
+          "alias": "manufacturer",
+          "columnName": "manufacturer"
+        },
+        {
+          "alias": "blade_count",
+          "columnName": "blade_count"
+        },
+        {
+          "alias": "current_status",
+          "columnName": "current_status"
+        },
+        {
+          "alias": "location",
+          "columnName": "location"
+        },
+        {
+          "alias": "assigned_tail_number",
+          "columnName": "assigned_tail_number"
+        },
+        {
+          "alias": "position",
+          "columnName": "position"
+        },
+        {
+          "alias": "total_time_hours",
+          "columnName": "total_time_hours"
+        },
+        {
+          "alias": "total_cycles",
+          "columnName": "total_cycles"
+        },
+        {
+          "alias": "time_since_overhaul",
+          "columnName": "time_since_overhaul"
+        },
+        {
+          "alias": "cycles_since_overhaul",
+          "columnName": "cycles_since_overhaul"
+        },
+        {
+          "alias": "time_remaining_to_overhaul",
+          "columnName": "time_remaining_to_overhaul"
+        },
+        {
+          "alias": "cycles_remaining_to_overhaul",
+          "columnName": "cycles_remaining_to_overhaul"
+        },
+        {
+          "alias": "last_overhaul_date",
+          "columnName": "last_overhaul_date"
+        },
+        {
+          "alias": "next_overhaul_date",
+          "columnName": "next_overhaul_date"
+        },
+        {
+          "alias": "overhaul_vendor",
+          "columnName": "overhaul_vendor"
+        },
+        {
+          "alias": "serviceable",
+          "columnName": "serviceable"
+        },
+        {
+          "alias": "condition",
+          "columnName": "condition"
+        },
+        {
+          "alias": "purchase_date",
+          "columnName": "purchase_date"
+        },
+        {
+          "alias": "purchase_cost",
+          "columnName": "purchase_cost"
+        },
+        {
+          "alias": "current_value",
+          "columnName": "current_value"
+        },
+        {
+          "alias": "notes",
+          "columnName": "notes"
+        },
+        {
+          "alias": "created_at",
+          "columnName": "created_at"
+        },
+        {
+          "alias": "created_by",
+          "columnName": "created_by"
+        },
+        {
+          "alias": "updated_at",
+          "columnName": "updated_at"
+        },
+        {
+          "alias": "updated_by",
+          "columnName": "updated_by"
+        }
+      ]
+    },
+    {
+      "alias": "propeller_history",
+      "dataSetId": "32c4ddbd-affe-4285-9afb-e00c11465679",
+      "fields": [
+        {
+          "alias": "history_id",
+          "columnName": "history_id"
+        },
+        {
+          "alias": "propeller_serial_number",
+          "columnName": "propeller_serial_number"
+        },
+        {
+          "alias": "event_date",
+          "columnName": "event_date"
+        },
+        {
+          "alias": "event_type",
+          "columnName": "event_type"
+        },
+        {
+          "alias": "tail_number",
+          "columnName": "tail_number"
+        },
+        {
+          "alias": "position",
+          "columnName": "position"
+        },
+        {
+          "alias": "removal_reason",
+          "columnName": "removal_reason"
+        },
+        {
+          "alias": "hours_at_event",
+          "columnName": "hours_at_event"
+        },
+        {
+          "alias": "cycles_at_event",
+          "columnName": "cycles_at_event"
+        },
+        {
+          "alias": "vendor",
+          "columnName": "vendor"
+        },
+        {
+          "alias": "work_order_number",
+          "columnName": "work_order_number"
+        },
+        {
+          "alias": "cost",
+          "columnName": "cost"
+        },
+        {
+          "alias": "downtime_days",
+          "columnName": "downtime_days"
+        },
+        {
+          "alias": "findings",
+          "columnName": "findings"
+        },
+        {
+          "alias": "actions_taken",
+          "columnName": "actions_taken"
+        },
+        {
+          "alias": "notes",
+          "columnName": "notes"
+        },
+        {
+          "alias": "technician",
+          "columnName": "technician"
+        },
+        {
+          "alias": "created_at",
+          "columnName": "created_at"
+        },
+        {
+          "alias": "created_by",
+          "columnName": "created_by"
+        }
+      ]
+    },
+    {
+      "alias": "route_swaps",
+      "dataSetId": "4ed04691-efda-43ee-960c-acf3af5d48a9",
+      "fields": [
+        {
+          "alias": "Effective_Date",
+          "columnName": "Effective Date"
+        },
+        {
+          "alias": "Route",
+          "columnName": "Route"
+        },
+        {
+          "alias": "Scheduled_Aircraft",
+          "columnName": "Scheduled Aircraft"
+        },
+        {
+          "alias": "Replacement_Aircraft",
+          "columnName": "Replacement Aircraft"
+        },
+        {
+          "alias": "Swap_Reason",
+          "columnName": "Swap Reason"
+        },
+        {
+          "alias": "Replacement_Location",
+          "columnName": "Replacement Location"
+        },
+        {
+          "alias": "Start_Time",
+          "columnName": "Start Time"
+        },
+        {
+          "alias": "Time_Zone",
+          "columnName": "Time Zone"
+        },
+        {
+          "alias": "Swap_Status",
+          "columnName": "Swap Status"
+        },
+        {
+          "alias": "Authorization",
+          "columnName": "Authorization"
+        },
+        {
+          "alias": "Notes",
+          "columnName": "Notes"
+        }
+      ]
+    },
+    {
+      "alias": "forecast_settings",
+      "dataSetId": "9bcb037a-ff00-4503-ac81-7c2caf0e678d",
+      "fields": [
+        {
+          "alias": "UTILIZATION_BASIS",
+          "columnName": "UTILIZATION BASIS"
+        },
+        {
+          "alias": "ANNUAL_RATE",
+          "columnName": "ANNUAL RATE"
+        },
+        {
+          "alias": "DAILY_RATE",
+          "columnName": "DAILY RATE"
+        },
+        {
+          "alias": "30-DAY_USE",
+          "columnName": "30-DAY USE"
+        },
+        {
+          "alias": "90-DAY_USE",
+          "columnName": "90-DAY USE"
+        }
+      ]
+    },
+    {
+      "alias": "aircraft_utilization",
+      "dataSetId": "5f953def-0026-4061-b662-c290fa25dd20",
+      "fields": [
+        {
+          "alias": "AIRCRAFT",
+          "columnName": "AIRCRAFT"
+        },
+        {
+          "alias": "PERIOD_START",
+          "columnName": "PERIOD START"
+        },
+        {
+          "alias": "PERIOD_END",
+          "columnName": "PERIOD END"
+        },
+        {
+          "alias": "SPAN_DAYS",
+          "columnName": "SPAN DAYS"
+        },
+        {
+          "alias": "ACTIVE_DAYS",
+          "columnName": "ACTIVE DAYS"
+        },
+        {
+          "alias": "COMPLETED_LEGS",
+          "columnName": "COMPLETED LEGS"
+        },
+        {
+          "alias": "FLIGHTS",
+          "columnName": "FLIGHTS"
+        },
+        {
+          "alias": "FLIGHT_HOURS",
+          "columnName": "FLIGHT HOURS"
+        },
+        {
+          "alias": "LANDINGS___CYCLES",
+          "columnName": "LANDINGS / CYCLES"
+        },
+        {
+          "alias": "ANNUAL_HOURS",
+          "columnName": "ANNUAL HOURS"
+        },
+        {
+          "alias": "ANNUAL_CYCLES",
+          "columnName": "ANNUAL CYCLES"
+        },
+        {
+          "alias": "ANNUAL_LANDINGS",
+          "columnName": "ANNUAL LANDINGS"
+        },
+        {
+          "alias": "FORECAST_HOURS",
+          "columnName": "FORECAST HOURS"
+        },
+        {
+          "alias": "FORECAST_CYCLES",
+          "columnName": "FORECAST CYCLES"
+        },
+        {
+          "alias": "FORECAST_LANDINGS",
+          "columnName": "FORECAST LANDINGS"
+        },
+        {
+          "alias": "FORECAST_BASIS",
+          "columnName": "FORECAST BASIS"
+        }
+      ]
+    },
+    {
+      "alias": "fleet_asset_import",
+      "dataSetId": "aaa2e830-8de0-4ca2-a637-8ed91eaa2191",
+      "fields": [
+        {
+          "alias": "Asset",
+          "columnName": "Asset"
+        },
+        {
+          "alias": "Type",
+          "columnName": "Type"
+        },
+        {
+          "alias": "Base",
+          "columnName": "Base"
+        },
+        {
+          "alias": "Status",
+          "columnName": "Status"
+        },
+        {
+          "alias": "Reason",
+          "columnName": "Reason"
+        },
+        {
+          "alias": "TOS",
+          "columnName": "TOS"
+        },
+        {
+          "alias": "Est._RTS",
+          "columnName": "Est. RTS"
+        },
+        {
+          "alias": "Make_Model",
+          "columnName": "Make Model"
+        },
+        {
+          "alias": "Most_Due",
+          "columnName": "Most Due"
+        },
+        {
+          "alias": "Remaining",
+          "columnName": "Remaining"
+        },
+        {
+          "alias": "Type_unit",
+          "columnName": "Type (unit)"
+        }
+      ]
+    }
+  ],
+  "description": "Aircraft maintenance tracking dashboard ",
+  "id": "fc8e4481-c562-4b44-91ed-f7a3ca8c1e83",
+  "name": "X-Wing Maintenance Dashboard",
+  "proxyId": "43540e36-5135-4d11-a23b-af9b4ae36c0a",
+  "size": {
+    "height": 4,
+    "width": 4
+  },
+  "version": "2.0.0"
+}

@@ -1,0 +1,98 @@
+{
+  "dataSourceName": "X-Wing | CapEx Transactions",
+  "description": "Capital expenditure transactions for fleet operations",
+  "columns": [
+      {
+        "name": "transaction_id",
+        "type": "STRING"
+      },
+      {
+        "name": "transaction_date",
+        "type": "DATE"
+      },
+      {
+        "name": "fiscal_year",
+        "type": "LONG"
+      },
+      {
+        "name": "fiscal_quarter",
+        "type": "STRING"
+      },
+      {
+        "name": "category",
+        "type": "STRING"
+      },
+      {
+        "name": "subcategory",
+        "type": "STRING"
+      },
+      {
+        "name": "tail_number",
+        "type": "STRING"
+      },
+      {
+        "name": "description",
+        "type": "STRING"
+      },
+      {
+        "name": "vendor",
+        "type": "STRING"
+      },
+      {
+        "name": "amount",
+        "type": "DECIMAL"
+      },
+      {
+        "name": "currency",
+        "type": "STRING"
+      },
+      {
+        "name": "budget_category",
+        "type": "STRING"
+      },
+      {
+        "name": "approved_by",
+        "type": "STRING"
+      },
+      {
+        "name": "approval_date",
+        "type": "DATE"
+      },
+      {
+        "name": "invoice_number",
+        "type": "STRING"
+      },
+      {
+        "name": "po_number",
+        "type": "STRING"
+      },
+      {
+        "name": "payment_status",
+        "type": "STRING"
+      },
+      {
+        "name": "payment_date",
+        "type": "DATE"
+      },
+      {
+        "name": "notes",
+        "type": "STRING"
+      },
+      {
+        "name": "created_at",
+        "type": "DATETIME"
+      },
+      {
+        "name": "created_by",
+        "type": "STRING"
+      },
+      {
+        "name": "updated_at",
+        "type": "DATETIME"
+      },
+      {
+        "name": "updated_by",
+        "type": "STRING"
+      }
+    ]
+}

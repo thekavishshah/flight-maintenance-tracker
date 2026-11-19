@@ -1,0 +1,18 @@
+{
+  "dataSourceName": "X-Wing | Due Lists",
+  "description": "Maintenance due items per tail number with compliance basis, remaining life, and status. Source: Due List Import tab from Fleet & Facilities workbook.",
+  "columns": [
+    {"name": "Aircraft", "type": "STRING"},
+    {"name": "Task / Inspection", "type": "STRING"},
+    {"name": "ATA", "type": "STRING"},
+    {"name": "Forecast Due", "type": "DATETIME"},
+    {"name": "Remaining", "type": "STRING"},
+    {"name": "Interval Type", "type": "STRING"},
+    {"name": "Due At", "type": "STRING"},
+    {"name": "Last Completed", "type": "DATETIME"},
+    {"name": "Notes", "type": "STRING"},
+    {"name": "Part / Serial", "type": "STRING"},
+    {"name": "Projected Days", "type": "DECIMAL"},
+    {"name": "Basis", "type": "STRING"}
+  ]
+}

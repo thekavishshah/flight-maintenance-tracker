@@ -1,0 +1,94 @@
+{
+  "dataSourceName": "X-Wing | Route Performance",
+  "description": "Route performance metrics and analysis",
+  "columns": [
+      {
+        "name": "route_id",
+        "type": "STRING"
+      },
+      {
+        "name": "route_name",
+        "type": "STRING"
+      },
+      {
+        "name": "origin_airport",
+        "type": "STRING"
+      },
+      {
+        "name": "destination_airport",
+        "type": "STRING"
+      },
+      {
+        "name": "analysis_period",
+        "type": "STRING"
+      },
+      {
+        "name": "fiscal_year",
+        "type": "LONG"
+      },
+      {
+        "name": "fiscal_quarter",
+        "type": "STRING"
+      },
+      {
+        "name": "total_flights",
+        "type": "LONG"
+      },
+      {
+        "name": "total_hours",
+        "type": "DECIMAL"
+      },
+      {
+        "name": "avg_load_factor",
+        "type": "DECIMAL"
+      },
+      {
+        "name": "total_revenue",
+        "type": "DECIMAL"
+      },
+      {
+        "name": "total_costs",
+        "type": "DECIMAL"
+      },
+      {
+        "name": "profit_margin",
+        "type": "DECIMAL"
+      },
+      {
+        "name": "revenue_per_flight",
+        "type": "DECIMAL"
+      },
+      {
+        "name": "cost_per_flight",
+        "type": "DECIMAL"
+      },
+      {
+        "name": "avg_flight_time_hours",
+        "type": "DECIMAL"
+      },
+      {
+        "name": "on_time_percentage",
+        "type": "DECIMAL"
+      },
+      {
+        "name": "utilization_rate",
+        "type": "DECIMAL"
+      },
+      {
+        "name": "demand_forecast",
+        "type": "STRING"
+      },
+      {
+        "name": "notes",
+        "type": "STRING"
+      },
+      {
+        "name": "created_at",
+        "type": "DATETIME"
+      },
+      {
+        "name": "created_by",
+        "type": "STRING"
+      }
+    ]
+}

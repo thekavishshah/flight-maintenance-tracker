@@ -1,0 +1,82 @@
+{
+  "dataSourceName": "X-Wing | Budget Allocations",
+  "description": "Annual and quarterly budget allocations for fleet operations",
+  "columns": [
+      {
+        "name": "allocation_id",
+        "type": "STRING"
+      },
+      {
+        "name": "fiscal_year",
+        "type": "LONG"
+      },
+      {
+        "name": "fiscal_quarter",
+        "type": "STRING"
+      },
+      {
+        "name": "budget_category",
+        "type": "STRING"
+      },
+      {
+        "name": "subcategory",
+        "type": "STRING"
+      },
+      {
+        "name": "allocated_amount",
+        "type": "DECIMAL"
+      },
+      {
+        "name": "spent_amount",
+        "type": "DECIMAL"
+      },
+      {
+        "name": "remaining_amount",
+        "type": "DECIMAL"
+      },
+      {
+        "name": "percent_used",
+        "type": "DECIMAL"
+      },
+      {
+        "name": "department",
+        "type": "STRING"
+      },
+      {
+        "name": "cost_center",
+        "type": "STRING"
+      },
+      {
+        "name": "approved_by",
+        "type": "STRING"
+      },
+      {
+        "name": "approval_date",
+        "type": "DATE"
+      },
+      {
+        "name": "status",
+        "type": "STRING"
+      },
+      {
+        "name": "notes",
+        "type": "STRING"
+      },
+      {
+        "name": "created_at",
+        "type": "DATETIME"
+      },
+      {
+        "name": "created_by",
+        "type": "STRING"
+      },
+      {
+        "name": "updated_at",
+        "type": "DATETIME"
+      },
+      {
+        "name": "updated_by",
+        "type": "STRING"
+      }
+    ]
+}

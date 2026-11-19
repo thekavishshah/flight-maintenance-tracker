@@ -1,0 +1,98 @@
+{
+  "dataSourceName": "X-Wing | Financial Metrics",
+  "description": "Financial performance metrics for fleet operations",
+  "columns": [
+      {
+        "name": "metric_id",
+        "type": "STRING"
+      },
+      {
+        "name": "metric_date",
+        "type": "DATE"
+      },
+      {
+        "name": "fiscal_year",
+        "type": "LONG"
+      },
+      {
+        "name": "fiscal_quarter",
+        "type": "STRING"
+      },
+      {
+        "name": "fiscal_month",
+        "type": "STRING"
+      },
+      {
+        "name": "total_revenue",
+        "type": "DECIMAL"
+      },
+      {
+        "name": "operating_costs",
+        "type": "DECIMAL"
+      },
+      {
+        "name": "maintenance_costs",
+        "type": "DECIMAL"
+      },
+      {
+        "name": "fuel_costs",
+        "type": "DECIMAL"
+      },
+      {
+        "name": "labor_costs",
+        "type": "DECIMAL"
+      },
+      {
+        "name": "capex_spending",
+        "type": "DECIMAL"
+      },
+      {
+        "name": "net_profit",
+        "type": "DECIMAL"
+      },
+      {
+        "name": "profit_margin",
+        "type": "DECIMAL"
+      },
+      {
+        "name": "fleet_utilization_percent",
+        "type": "DECIMAL"
+      },
+      {
+        "name": "revenue_per_flight_hour",
+        "type": "DECIMAL"
+      },
+      {
+        "name": "cost_per_flight_hour",
+        "type": "DECIMAL"
+      },
+      {
+        "name": "total_flight_hours",
+        "type": "DECIMAL"
+      },
+      {
+        "name": "total_cycles",
+        "type": "LONG"
+      },
+      {
+        "name": "aircraft_available",
+        "type": "LONG"
+      },
+      {
+        "name": "aircraft_in_maintenance",
+        "type": "LONG"
+      },
+      {
+        "name": "notes",
+        "type": "STRING"
+      },
+      {
+        "name": "created_at",
+        "type": "DATETIME"
+      },
+      {
+        "name": "created_by",
+        "type": "STRING"
+      }
+    ]
+}

@@ -1,0 +1,19 @@
+{
+  "dataSourceName": "X-Wing | Daily Routes",
+  "description": "Daily route assignments with pilot-in-command, departure/arrival airports, and scheduled times. Source: Daily Route Import tab from Fleet & Facilities workbook.",
+  "columns": [
+    {"name": "ROUTE DATE", "type": "DATETIME"},
+    {"name": "START TIME", "type": "STRING"},
+    {"name": "AIRCRAFT", "type": "STRING"},
+    {"name": "OPERATION NUMBER", "type": "STRING"},
+    {"name": "CREATED BY", "type": "STRING"},
+    {"name": "REQUESTING AGENCY", "type": "STRING"},
+    {"name": "REQUESTOR NAME", "type": "STRING"},
+    {"name": "FLIGHT TYPE", "type": "STRING"},
+    {"name": "DEPARTURE", "type": "STRING"},
+    {"name": "DESTINATION", "type": "STRING"},
+    {"name": "FLIGHT NOTES", "type": "STRING"},
+    {"name": "PIC", "type": "STRING"},
+    {"name": "SIC", "type": "STRING"}
+  ]
+}

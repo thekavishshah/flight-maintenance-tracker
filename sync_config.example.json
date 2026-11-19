@@ -1,0 +1,4 @@
+{
+  "spreadsheet_id": "PASTE_THE_ID_FROM_THE_SHEET_URL",
+  "service_account_file": "credentials/google-service-account.json"
+}

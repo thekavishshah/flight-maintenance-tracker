@@ -1,0 +1,11 @@
+{
+  "dataSourceName": "X-Wing | Forecast Settings",
+  "description": "Utilization forecast settings with annual and daily rates per basis type (Flight Hours, Cycles, Landings). Source: Forecast Settings tab from Fleet & Facilities workbook.",
+  "columns": [
+    {"name": "UTILIZATION BASIS", "type": "STRING"},
+    {"name": "ANNUAL RATE", "type": "DECIMAL"},
+    {"name": "DAILY RATE", "type": "DECIMAL"},
+    {"name": "30-DAY USE", "type": "DECIMAL"},
+    {"name": "90-DAY USE", "type": "DECIMAL"}
+  ]
+}

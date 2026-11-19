@@ -1,0 +1,98 @@
+{
+  "dataSourceName": "X-Wing | Fleet Projections",
+  "description": "Long-term fleet planning projections and forecasts",
+  "columns": [
+      {
+        "name": "projection_id",
+        "type": "STRING"
+      },
+      {
+        "name": "projection_date",
+        "type": "DATE"
+      },
+      {
+        "name": "projection_year",
+        "type": "LONG"
+      },
+      {
+        "name": "projection_quarter",
+        "type": "STRING"
+      },
+      {
+        "name": "tail_number",
+        "type": "STRING"
+      },
+      {
+        "name": "aircraft_model",
+        "type": "STRING"
+      },
+      {
+        "name": "current_status",
+        "type": "STRING"
+      },
+      {
+        "name": "planned_action",
+        "type": "STRING"
+      },
+      {
+        "name": "action_date",
+        "type": "DATE"
+      },
+      {
+        "name": "estimated_cost",
+        "type": "DECIMAL"
+      },
+      {
+        "name": "projected_hours_remaining",
+        "type": "DECIMAL"
+      },
+      {
+        "name": "projected_cycles_remaining",
+        "type": "LONG"
+      },
+      {
+        "name": "retirement_date",
+        "type": "DATE"
+      },
+      {
+        "name": "replacement_plan",
+        "type": "STRING"
+      },
+      {
+        "name": "utilization_forecast",
+        "type": "DECIMAL"
+      },
+      {
+        "name": "revenue_forecast",
+        "type": "DECIMAL"
+      },
+      {
+        "name": "notes",
+        "type": "STRING"
+      },
+      {
+        "name": "approved_by",
+        "type": "STRING"
+      },
+      {
+        "name": "approval_status",
+        "type": "STRING"
+      },
+      {
+        "name": "created_at",
+        "type": "DATETIME"
+      },
+      {
+        "name": "created_by",
+        "type": "STRING"
+      },
+      {
+        "name": "updated_at",
+        "type": "DATETIME"
+      },
+      {
+        "name": "updated_by",
+        "type": "STRING"
+      }
+    ]
+}

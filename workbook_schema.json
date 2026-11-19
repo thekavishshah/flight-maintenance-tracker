@@ -1,0 +1,525 @@
+{
+  "Dashboard": {
+    "headers": [
+      "WEEKLY MANAGEMENT // FLEET & FACILITIES",
+      "Column_1",
+      "Column_2",
+      "Column_3",
+      "Column_4",
+      "Column_5",
+      "Column_6",
+      "Column_7",
+      "Column_8",
+      "Column_9",
+      "Column_10",
+      "Column_11",
+      "REPORT UPLOADS",
+      "Column_13",
+      "Column_14",
+      "Column_15",
+      "Column_16",
+      "Column_17",
+      "Column_18",
+      "Column_19",
+      "Column_20",
+      "Column_21",
+      "Column_22",
+      "Column_23",
+      "Column_24"
+    ],
+    "sample_row": [
+      "FLEET & FACILITIES CONTROL",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      "APPROVED GOOGLE ACCOUNTS ONLY \u2022 SETUP IN PROGRESS",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "column_count": 25
+  },
+  "AC status": {
+    "headers": [
+      "Asset",
+      "Est. RTS",
+      "Location",
+      "ISSUE",
+      "NOTES",
+      "WORK STAGE",
+      "SUBMIT",
+      "A/C STATUS HISTORY SEARCH",
+      "Column_8",
+      "Column_9",
+      "Column_10",
+      "Column_11",
+      "Column_12",
+      "Column_13",
+      "Column_14",
+      "Column_15",
+      "Column_16",
+      "Column_17",
+      "Column_18",
+      "Column_19",
+      "Column_20",
+      "Column_21",
+      "Column_22",
+      "Record Date"
+    ],
+    "sample_row": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      "True",
+      "Tail Number",
+      null,
+      "Keyword",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "column_count": 24
+  },
+  "Route Swaps": {
+    "headers": [
+      "ROUTE SWAPS",
+      "Column_1",
+      "Column_2",
+      "Column_3",
+      "Column_4",
+      "Column_5",
+      "Column_6",
+      "Column_7",
+      "Column_8",
+      "Column_9",
+      "Column_10",
+      "Column_11"
+    ],
+    "sample_row": [
+      "Effective Date",
+      "Route",
+      "Scheduled Aircraft",
+      "Replacement Aircraft",
+      "Swap Reason",
+      "Replacement Location",
+      "Start Time",
+      "Time Zone",
+      "Swap Status",
+      "Authorization",
+      "Notes",
+      "SUBMIT"
+    ],
+    "column_count": 12
+  },
+  "Project Tracking": {
+    "headers": [
+      "Column_0",
+      "Column_1",
+      "Fleet and Facilities Needs",
+      "Column_3",
+      "Column_4",
+      "Column_5",
+      "Column_6",
+      "Column_7",
+      "Column_8",
+      "",
+      "Column_10",
+      "Column_11",
+      "Column_12",
+      "Column_13",
+      "Column_14",
+      "Column_15",
+      "STATUS KEY",
+      "Column_17",
+      "PRIORITY KEY",
+      "Column_19"
+    ],
+    "sample_row": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      "On Hold",
+      null,
+      "Low",
+      null
+    ],
+    "column_count": 20
+  },
+  "Report Uploads": {
+    "headers": [
+      "REPORT UPLOAD CENTER"
+    ],
+    "sample_row": [
+      "Controlled report revisions for Fleet & Facilities"
+    ],
+    "column_count": 1
+  },
+  "Master Fleet": {
+    "headers": [
+      "Aircraft",
+      "Home Base",
+      "Fleet Status",
+      "Current Location",
+      "Est. RTS",
+      "Current Work Scope",
+      "Management Notes",
+      "Selectable Aircraft",
+      "Aircraft Serial Number",
+      "Year of Manufacture"
+    ],
+    "sample_row": [
+      "N1031P",
+      "LAN",
+      "Active",
+      null,
+      "ON ROUTE",
+      null,
+      "",
+      "N1031P",
+      "208B0404",
+      "1994"
+    ],
+    "column_count": 10
+  },
+  "Daily Route Parser Test": {
+    "headers": [
+      "OPERATION NUMBER",
+      "AIRCRAFT",
+      "START TIME",
+      "CREATED BY",
+      "PIC",
+      "DEPARTURE",
+      "DESTINATION"
+    ],
+    "sample_row": [
+      "26-MRA-662-TF-8",
+      "N1037N",
+      "05:00:00",
+      "Talena",
+      "James Butts",
+      "KADS",
+      "KDFW"
+    ],
+    "column_count": 7
+  },
+  "Daily Route Debug": {
+    "headers": [
+      "LINE",
+      "CONVERTED TEXT"
+    ],
+    "sample_row": [
+      "1.0",
+      "135 Air Carrier Management "
+    ],
+    "column_count": 2
+  },
+  "Airport Location Import": {
+    "headers": [
+      "Location"
+    ],
+    "sample_row": [
+      "KADS"
+    ],
+    "column_count": 1
+  },
+  "Avionics Equipment Import": {
+    "headers": [
+      "Aircraft",
+      "Available Avionics"
+    ],
+    "sample_row": [
+      "N1031P",
+      "AUDIO PANEL: KMA24; NAV #1: GARMIN 400W; NAV#2: KX"
+    ],
+    "column_count": 2
+  },
+  "Fleet Asset Import": {
+    "headers": [
+      "Asset",
+      "Type",
+      "Base",
+      "Status",
+      "Reason",
+      "TOS",
+      "Est. RTS",
+      "Make Model",
+      "Most Due",
+      "Remaining",
+      "Type"
+    ],
+    "sample_row": [
+      "N1031P",
+      "Fixed Wing",
+      "Lansing",
+      "OUT OF SERVICE",
+      "Scheduled MX",
+      "0d 7h 44m",
+      null,
+      "C-208B",
+      "EMERGENCY LOCATOR TR.",
+      "1.8",
+      "Days"
+    ],
+    "column_count": 11
+  },
+  "Access Control": {
+    "headers": [
+      "ACCESS CONTROL"
+    ],
+    "sample_row": [
+      "Administrator-managed user access and individual p"
+    ],
+    "column_count": 1
+  },
+  "Due List Import": {
+    "headers": [
+      "Aircraft",
+      "Task / Inspection",
+      "ATA",
+      "Forecast Due",
+      "Remaining",
+      "Interval Type",
+      "Due At",
+      "Last Completed",
+      "Notes",
+      "Part / Serial",
+      "Projected Days",
+      "Basis",
+      "Column_12",
+      "Column_13",
+      "Column_14",
+      "Column_15",
+      "Column_16",
+      "Column_17"
+    ],
+    "sample_row": [
+      "N9762B",
+      "SAI-006MR2 MONTHLY FIRE EXTINGUISHER INSPECTION",
+      "26-20",
+      "2026-08-09 00:00:00",
+      "-13(17)",
+      "Days",
+      "2026-08-09(2086)",
+      "2026-08-01 00:00:00",
+      "Calendar-dated item from N9762B due-list export; m",
+      null,
+      "-13.0",
+      "Calendar",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "column_count": 18
+  },
+  "Forecast Settings": {
+    "headers": [
+      "UTILIZATION BASIS",
+      "ANNUAL RATE",
+      "DAILY RATE",
+      "30-DAY USE",
+      "90-DAY USE"
+    ],
+    "sample_row": [
+      "Flight Hours",
+      "300.0",
+      "0.8219178082",
+      "24.65753425",
+      "73.97260274"
+    ],
+    "column_count": 5
+  },
+  "Aircraft Utilization": {
+    "headers": [
+      "AIRCRAFT",
+      "PERIOD START",
+      "PERIOD END",
+      "SPAN DAYS",
+      "ACTIVE DAYS",
+      "COMPLETED LEGS",
+      "FLIGHTS",
+      "FLIGHT HOURS",
+      "LANDINGS / CYCLES",
+      "ANNUAL HOURS",
+      "ANNUAL CYCLES",
+      "ANNUAL LANDINGS",
+      "FORECAST HOURS",
+      "FORECAST CYCLES",
+      "FORECAST LANDINGS",
+      "FORECAST BASIS"
+    ],
+    "sample_row": [
+      "N1031P",
+      "2026-05-01 00:00:00",
+      "2026-08-08 00:00:00",
+      "100.0",
+      "23.0",
+      "45.0",
+      "32.0",
+      "54.1",
+      "45.0",
+      "197.5",
+      "164.3",
+      "164.3",
+      "300",
+      "300",
+      "300",
+      "300/year default"
+    ],
+    "column_count": 16
+  },
+  "Avionics Lookup": {
+    "headers": [
+      "Tail Number",
+      "Available Avionics"
+    ],
+    "sample_row": [
+      "N1031P",
+      "AUDIO PANEL: KMA24; NAV #1: GARMIN 400W; NAV#2: KX"
+    ],
+    "column_count": 2
+  },
+  "Aircraft Times Import": {
+    "headers": [
+      "REPORT DATE",
+      "AIRCRAFT",
+      "MODEL",
+      "HOBBS",
+      "AFTT",
+      "LANDINGS",
+      "START CYCLES",
+      "ENGINE TIME",
+      "PROPELLER TIME",
+      "SOURCE FILE"
+    ],
+    "sample_row": [
+      "2026-10-16 01:00:00",
+      "N220XW",
+      "C-208B",
+      "1216.5",
+      "11216.5",
+      "12267.0",
+      "14381.0",
+      "6560.1",
+      "0.0",
+      "Aircraft MX Times Report.pdf"
+    ],
+    "column_count": 10
+  },
+  "Daily Route Import": {
+    "headers": [
+      "ROUTE DATE",
+      "START TIME",
+      "AIRCRAFT",
+      "OPERATION NUMBER",
+      "CREATED BY",
+      "REQUESTING AGENCY",
+      "REQUESTOR NAME",
+      "FLIGHT TYPE",
+      "DEPARTURE",
+      "DESTINATION",
+      "FLIGHT NOTES",
+      "PIC",
+      "SIC"
+    ],
+    "sample_row": [
+      "2026-08-11 13:00:00",
+      "05:00:00",
+      "N1037N",
+      "26-MRA-662-TF-8",
+      "Talena",
+      "UPS DFW",
+      null,
+      "Cargo",
+      "KADS",
+      "KDFW",
+      null,
+      "James Butts",
+      "x"
+    ],
+    "column_count": 13
+  },
+  "Swap Time Options": {
+    "headers": [
+      "00:00:00"
+    ],
+    "sample_row": [
+      "00:15:00"
+    ],
+    "column_count": 1
+  },
+  "Flight Data Import": {
+    "headers": [
+      "Date",
+      "Aircraft",
+      "Route",
+      "Routing",
+      "Op #",
+      "Flt Type"
+    ],
+    "sample_row": [
+      "2026-08-03 08:24:00",
+      "N4687B",
+      "MRA-644",
+      "KMAF - KE38 - KMAF",
+      "26-MRA-644-MF-7-31",
+      "Cargo"
+    ],
+    "column_count": 6
+  },
+  "Authorized User Options": {
+    "headers": [
+      "Donald Lovelace"
+    ],
+    "sample_row": [
+      "James Dear"
+    ],
+    "column_count": 1
+  }
+}

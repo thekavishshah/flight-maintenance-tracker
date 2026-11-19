@@ -1,0 +1,30 @@
+# Google sync secrets and logs
+sync_config.json
+credentials/
+sync.log
+sync.launchd.log
+
+# Python
+venv/
+__pycache__/
+*.pyc
+
+# OS / local tooling
+.DS_Store
+.claude/settings.local.json
+deploy.log
+
+# Sensitive / real data (never commit)
+*.csv
+*.xlsx
+source_data/
+source_data_backup_*/
+app/data/
+app/data_backup_*/
+dataset-ids.json
+dataset-reconciliation-report.json
+create-card.json
+
+# Backups
+*.bak
+*.backup

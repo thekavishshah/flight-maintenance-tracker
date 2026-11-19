@@ -1,0 +1,22 @@
+{
+  "dataSourceName": "X-Wing | Aircraft Utilization",
+  "description": "Aircraft utilization metrics with actual and forecast usage rates. Contains computed utilization per tail with basis labels ('3-month actual' vs '300/year default'). Source: Aircraft Utilization tab from Fleet & Facilities workbook.",
+  "columns": [
+    {"name": "AIRCRAFT", "type": "STRING"},
+    {"name": "PERIOD START", "type": "DATETIME"},
+    {"name": "PERIOD END", "type": "DATETIME"},
+    {"name": "SPAN DAYS", "type": "DECIMAL"},
+    {"name": "ACTIVE DAYS", "type": "DECIMAL"},
+    {"name": "COMPLETED LEGS", "type": "DECIMAL"},
+    {"name": "FLIGHTS", "type": "DECIMAL"},
+    {"name": "FLIGHT HOURS", "type": "DECIMAL"},
+    {"name": "LANDINGS / CYCLES", "type": "DECIMAL"},
+    {"name": "ANNUAL HOURS", "type": "DECIMAL"},
+    {"name": "ANNUAL CYCLES", "type": "DECIMAL"},
+    {"name": "ANNUAL LANDINGS", "type": "DECIMAL"},
+    {"name": "FORECAST HOURS", "type": "DECIMAL"},
+    {"name": "FORECAST CYCLES", "type": "DECIMAL"},
+    {"name": "FORECAST LANDINGS", "type": "DECIMAL"},
+    {"name": "FORECAST BASIS", "type": "STRING"}
+  ]
+}

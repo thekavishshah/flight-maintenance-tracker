@@ -1,0 +1,17 @@
+{
+  "dataSourceName": "X-Wing | Route Swaps",
+  "description": "Route swap tracking with scheduled and replacement aircraft, swap reasons, and authorization. Source: Route Swaps tab from Fleet & Facilities workbook.",
+  "columns": [
+    {"name": "Effective Date", "type": "DATETIME"},
+    {"name": "Route", "type": "STRING"},
+    {"name": "Scheduled Aircraft", "type": "STRING"},
+    {"name": "Replacement Aircraft", "type": "STRING"},
+    {"name": "Swap Reason", "type": "STRING"},
+    {"name": "Replacement Location", "type": "STRING"},
+    {"name": "Start Time", "type": "STRING"},
+    {"name": "Time Zone", "type": "STRING"},
+    {"name": "Swap Status", "type": "STRING"},
+    {"name": "Authorization", "type": "STRING"},
+    {"name": "Notes", "type": "STRING"}
+  ]
+}

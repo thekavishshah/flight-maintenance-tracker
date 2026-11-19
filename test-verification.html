@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>X-Wing Verification Test</title>
+  <style>
+    body { font-family: monospace; padding: 20px; background: #1e293b; color: #e2e8f0; }
+    h2 { color: #38bdf8; }
+    .result { margin: 10px 0; padding: 10px; background: #334155; border-radius: 4px; }
+    .pass { border-left: 4px solid #10b981; }
+    .fail { border-left: 4px solid #ef4444; }
+    button { padding: 10px 20px; margin: 10px 5px; background: #0ea5e9; color: white; border: none; border-radius: 4px; cursor: pointer; }
+    button:hover { background: #0284c7; }
+    #console { background: #0f172a; padding: 15px; border-radius: 4px; margin-top: 20px; max-height: 400px; overflow-y: auto; }
+  </style>
+</head>
+<body>
+  <h1>X-Wing App Verification</h1>
+  <p>Testing at: <code>http://localhost:8080/app/app.html?asof=2026-10-18</code></p>
+
+  <button onclick="runTests()">Run Tests</button>
+  <button onclick="clearResults()">Clear</button>
+
+  <div id="results"></div>
+  <div id="console"></div>
+
+  <script>
+    function log(msg) {
+      const consoleDiv = document.getElementById('console');
+      consoleDiv.innerHTML += msg + '<br>';
+      consoleDiv.scrollTop = consoleDiv.scrollHeight;
+    }
+
+    function clearResults() {
+      document.getElementById('results').innerHTML = '';
+      document.getElementById('console').innerHTML = '';
+    }
+
+    async function runTests() {
+      clearResults();
+      const resultsDiv = document.getElementById('results');
+
+      log('Opening app in iframe...');
+
+      const iframe = document.createElement('iframe');
+      iframe.src = 'http://localhost:8080/app/app.html?asof=2026-10-18';
+      iframe.style.display = 'none';
+      document.body.appendChild(iframe);
+
+      await new Promise(resolve => {
+        iframe.onload = () => {
+          log('App loaded');
+          setTimeout(resolve, 3000); // Wait for data to load
+        };
+      });
+
+      const doc = iframe.contentDocument || iframe.contentWindow.document;
+      const win = iframe.contentWindow;
+
+      // Test 1: Dashboard counts
+      log('\\n=== TEST 1: Dashboard Counts ===');
+      const overdue = doc.getElementById('stat-overdue')?.textContent || 'N/A';
+      const due30 = doc.getElementById('stat-due30')?.textContent || 'N/A';
+      const due3160 = doc.getElementById('stat-due3160')?.textContent || 'N/A';
+      const due6190 = doc.getElementById('stat-due6190')?.textContent || 'N/A';
+
+      log(`Overdue: ${overdue} (expected: 138)`);
+      log(`Due ≤30 days: ${due30} (expected: 63)`);
+      log(`Due 31-60 days: ${due3160} (expected: 67)`);
+      log(`Due 61-90 days: ${due6190} (expected: 59)`);
+
+      const dashPass = overdue === '138' && due30 === '63' && due3160 === '67' && due6190 === '59';
+      resultsDiv.innerHTML += `<div class="result ${dashPass ? 'pass' : 'fail'}">Dashboard Counts: ${dashPass ? 'PASS' : 'FAIL'}</div>`;
+
+      // Test 2: Tab names
+      log('\\n=== TEST 2: Tab Names ===');
+      const tabs = Array.from(doc.querySelectorAll('.view-nav-maint .tab-btn')).map(btn => btn.textContent.trim());
+      log('Tabs found: ' + tabs.join(', '));
+
+      const hasWorkOrders = tabs.some(t => t.includes('WORK ORDERS'));
+      const hasCompliance = tabs.some(t => t.includes('COMPLIANCE'));
+      const tabsPass = !hasWorkOrders && !hasCompliance;
+
+      resultsDiv.innerHTML += `<div class="result ${tabsPass ? 'pass' : 'fail'}">Removed tabs: ${tabsPass ? 'PASS' : 'FAIL'} (WORK ORDERS and COMPLIANCE should not appear)</div>`;
+
+      // Test 3: Click Due Lists tab
+      log('\\n=== TEST 3: Due Lists Tab ===');
+      const dueListsBtn = Array.from(doc.querySelectorAll('.tab-btn')).find(btn => btn.textContent.includes('DUE LISTS'));
+      if (dueListsBtn) {
+        dueListsBtn.click();
+        log('Clicked Due Lists tab');
+        await new Promise(resolve => setTimeout(resolve, 1000));
+
+        // Find N9762B VOR CHK row
+        const rows = Array.from(doc.querySelectorAll('#due-lists-table-2 tbody tr'));
+        const vorRow = rows.find(row => {
+          const text = row.textContent;
+          return text.includes('N9762B') && text.includes('VOR CHK');
+        });
+
+        if (vorRow) {
+          const cells = Array.from(vorRow.querySelectorAll('td'));
+          const tail = cells[0]?.textContent.trim() || '';
+          const task = cells[1]?.textContent.trim() || '';
+          const remaining = cells[4]?.textContent.trim() || '';
+          const dueDate = cells[5]?.textContent.trim() || '';
+
+          log(`\\nN9762B VOR CHK Row:`);
+          log(`  Tail: ${tail}`);
+          log(`  Task: ${task}`);
+          log(`  Remaining: ${remaining}`);
+          log(`  Due Date: ${dueDate}`);
+
+          const hasStaleTag = tail.includes('Aug export - stale');
+          const remainingCorrect = remaining === 'Overdue by 50 days';
+
+          resultsDiv.innerHTML += `<div class="result ${hasStaleTag && remainingCorrect ? 'pass' : 'fail'}">N9762B VOR CHK: ${hasStaleTag && remainingCorrect ? 'PASS' : 'FAIL'} (Should show "Overdue by 50 days" and "Aug export - stale" tag)</div>`;
+        } else {
+          log('N9762B VOR CHK row NOT FOUND');
+          resultsDiv.innerHTML += `<div class="result fail">N9762B VOR CHK: FAIL (Row not found)</div>`;
+        }
+
+        // Count stale rows
+        const staleRows = Array.from(doc.querySelectorAll('#due-lists-table-2 tbody tr')).filter(row =>
+          row.textContent.includes('Aug export - stale')
+        );
+        log(`\\nStale rows count: ${staleRows.length} (expected: 32)`);
+
+        const staleTails = new Set();
+        staleRows.forEach(row => {
+          const tailCell = row.querySelector('td strong');
+          if (tailCell) staleTails.add(tailCell.textContent.trim());
+        });
+        log(`Stale tails: ${Array.from(staleTails).join(', ')}`);
+
+        const stalePass = staleRows.length === 32 && staleTails.has('N9762B') && staleTails.has('N9505B');
+        resultsDiv.innerHTML += `<div class="result ${stalePass ? 'pass' : 'fail'}">Stale rows: ${stalePass ? 'PASS' : 'FAIL'} (Expected 32 rows from N9762B and N9505B)</div>`;
+      }
+
+      // Test 4: Console errors
+      log('\\n=== TEST 4: Console Errors ===');
+      log('Check browser console manually for errors');
+
+      document.body.removeChild(iframe);
+      log('\\n=== Tests Complete ===');
+    }
+  </script>
+</body>
+</html>

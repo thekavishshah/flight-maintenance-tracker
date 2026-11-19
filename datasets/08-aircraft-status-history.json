@@ -1,0 +1,13 @@
+{
+  "dataSourceName": "X-Wing | Aircraft Status History",
+  "description": "Historical log of aircraft status changes for the 3-year searchable history feature. Source: AC status tab from Fleet & Facilities workbook.",
+  "columns": [
+    {"name": "Asset", "type": "STRING"},
+    {"name": "Est. RTS", "type": "DATETIME"},
+    {"name": "Location", "type": "STRING"},
+    {"name": "ISSUE", "type": "STRING"},
+    {"name": "NOTES", "type": "STRING"},
+    {"name": "WORK STAGE", "type": "STRING"},
+    {"name": "Record Date", "type": "DATETIME"}
+  ]
+}

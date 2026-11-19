@@ -1,0 +1,12 @@
+{
+  "dataSourceName": "X-Wing | Flight Data",
+  "description": "Flight history with tail numbers, dates, routes, and flight types. Source: Flight Data Import tab from Fleet & Facilities workbook.",
+  "columns": [
+    {"name": "Date", "type": "DATETIME"},
+    {"name": "Aircraft", "type": "STRING"},
+    {"name": "Route", "type": "STRING"},
+    {"name": "Routing", "type": "STRING"},
+    {"name": "Op #", "type": "STRING"},
+    {"name": "Flt Type", "type": "STRING"}
+  ]
+}

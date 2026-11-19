@@ -1,0 +1,82 @@
+{
+  "dataSourceName": "X-Wing | Engine History",
+  "description": "Engine assignment and overhaul history tracking",
+  "columns": [
+      {
+        "name": "history_id",
+        "type": "STRING"
+      },
+      {
+        "name": "engine_serial_number",
+        "type": "STRING"
+      },
+      {
+        "name": "event_date",
+        "type": "DATE"
+      },
+      {
+        "name": "event_type",
+        "type": "STRING"
+      },
+      {
+        "name": "tail_number",
+        "type": "STRING"
+      },
+      {
+        "name": "position",
+        "type": "STRING"
+      },
+      {
+        "name": "removal_reason",
+        "type": "STRING"
+      },
+      {
+        "name": "hours_at_event",
+        "type": "DECIMAL"
+      },
+      {
+        "name": "cycles_at_event",
+        "type": "LONG"
+      },
+      {
+        "name": "vendor",
+        "type": "STRING"
+      },
+      {
+        "name": "work_order_number",
+        "type": "STRING"
+      },
+      {
+        "name": "cost",
+        "type": "DECIMAL"
+      },
+      {
+        "name": "downtime_days",
+        "type": "LONG"
+      },
+      {
+        "name": "findings",
+        "type": "STRING"
+      },
+      {
+        "name": "actions_taken",
+        "type": "STRING"
+      },
+      {
+        "name": "notes",
+        "type": "STRING"
+      },
+      {
+        "name": "technician",
+        "type": "STRING"
+      },
+      {
+        "name": "created_at",
+        "type": "DATETIME"
+      },
+      {
+        "name": "created_by",
+        "type": "STRING"
+      }
+    ]
+}

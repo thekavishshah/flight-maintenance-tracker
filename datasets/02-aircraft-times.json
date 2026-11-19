@@ -1,0 +1,16 @@
+{
+  "dataSourceName": "X-Wing | Aircraft Times",
+  "description": "Time-series snapshots of aircraft times, cycles, and landings. Source: Aircraft Times Import tab from Fleet & Facilities workbook.",
+  "columns": [
+    {"name": "REPORT DATE", "type": "DATETIME"},
+    {"name": "AIRCRAFT", "type": "STRING"},
+    {"name": "MODEL", "type": "STRING"},
+    {"name": "HOBBS", "type": "DECIMAL"},
+    {"name": "AFTT", "type": "DECIMAL"},
+    {"name": "LANDINGS", "type": "DECIMAL"},
+    {"name": "START CYCLES", "type": "DECIMAL"},
+    {"name": "ENGINE TIME", "type": "DECIMAL"},
+    {"name": "PROPELLER TIME", "type": "DECIMAL"},
+    {"name": "SOURCE FILE", "type": "STRING"}
+  ]
+}
